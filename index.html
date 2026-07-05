@@ -50,33 +50,33 @@
         }
         /* Custom Glowing & Blur Effects */
         .glass-panel {
-            background: rgba(255, 251, 247, 0.75);
+            background: rgba(255, 251, 247, 0.8);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 149, 135, 0.2);
+            border: 1px solid rgba(226, 149, 135, 0.15);
         }
         .teal-glass {
-            background: rgba(67, 126, 120, 0.1);
+            background: rgba(67, 126, 120, 0.08);
             backdrop-filter: blur(8px);
-            border: 1px solid rgba(67, 126, 120, 0.2);
+            border: 1px solid rgba(67, 126, 120, 0.15);
         }
         .glowing-shadow {
-            box-shadow: 0 10px 30px -10px rgba(67, 126, 120, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(67, 126, 120, 0.25);
         }
         .glowing-shadow-peach {
-            box-shadow: 0 10px 30px -10px rgba(226, 149, 135, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(226, 149, 135, 0.35);
         }
         /* Custom Animations */
         @keyframes float-slow {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(3deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
         }
         @keyframes float-reverse {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(12px) rotate(-3deg); }
+            50% { transform: translateY(10px) rotate(-2deg); }
         }
-        .animate-float-1 { animation: float-slow 8s ease-in-out infinite; }
-        .animate-float-2 { animation: float-reverse 10s ease-in-out infinite; }
+        .animate-float-1 { animation: float-slow 7s ease-in-out infinite; }
+        .animate-float-2 { animation: float-reverse 9s ease-in-out infinite; }
         
         /* Particle Background Canvas */
         #particle-canvas {
@@ -88,11 +88,6 @@
             z-index: -1;
             pointer-events: none;
         }
-        /* Active nav item */
-        .nav-active {
-            color: #e29587;
-            border-bottom: 2px solid #e29587;
-        }
     </style>
 </head>
 <body class="text-cozyTeal-900 selection:bg-cozyPeach-200">
@@ -101,37 +96,37 @@
     <canvas id="particle-canvas"></canvas>
 
     <!-- NAVIGATION BAR -->
-    <nav class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-cozyPeach-200/30 px-6 py-4 transition-all duration-300">
+    <nav class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-cozyPeach-200/20 px-6 py-4 transition-all duration-300">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="brand-font font-bold text-xl text-cozyTeal-700 flex items-center gap-2">
-                <span class="p-2 bg-cozyPeach-500 text-white rounded-full text-xs animate-pulse"><i class="fa-solid fa-graduation-cap"></i></span>
-                Thảo's Space
+            <a href="#" class="brand-font font-bold text-lg text-cozyTeal-700 flex items-center gap-2">
+                <span class="p-2 bg-cozyPeach-500 text-white rounded-full text-[10px]"><i class="fa-solid fa-feather-pointed"></i></span>
+                Phương Thảo
             </a>
             
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-8 font-medium">
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm">
                 <a href="#introduction" class="hover:text-cozyPeach-500 transition-colors duration-200">Giới thiệu</a>
-                <a href="#projects" class="hover:text-cozyPeach-500 transition-colors duration-200">Dự án học tập</a>
-                <a href="#reflection" class="hover:text-cozyPeach-500 transition-colors duration-200">Tổng kết</a>
-                <a href="#ai-tools" class="hover:text-cozyPeach-500 transition-colors duration-200">Công cụ tương tác</a>
-                <a href="https://drive.google.com/drive/folders/1ZIYHnp0cfUC8EgM_vMg93-nftUP3fxfU?usp=drive_link" target="_blank" class="px-4 py-2 bg-cozyTeal-600 text-white hover:bg-cozyTeal-700 rounded-full transition-all duration-300 shadow-md text-sm flex items-center gap-2 glowing-shadow">
+                <a href="#projects" class="hover:text-cozyPeach-500 transition-colors duration-200">Bài tập của mình</a>
+                <a href="#reflection" class="hover:text-cozyPeach-500 transition-colors duration-200">Trải nghiệm</a>
+                <a href="#ai-tools" class="hover:text-cozyPeach-500 transition-colors duration-200">Công cụ nhỏ</a>
+                <a href="https://drive.google.com/drive/folders/1ZIYHnp0cfUC8EgM_vMg93-nftUP3fxfU?usp=drive_link" target="_blank" class="px-4 py-2 bg-cozyTeal-600 text-white hover:bg-cozyTeal-700 rounded-full transition-all duration-300 shadow-sm text-xs flex items-center gap-1.5 glowing-shadow">
                     <i class="fa-brands fa-google-drive"></i> Xem bài tập trên GG drive
                 </a>
             </div>
 
             <!-- Mobile Toggle -->
             <button id="mobile-menu-btn" class="md:hidden text-cozyTeal-700 hover:text-cozyPeach-500 focus:outline-none">
-                <i class="fa-solid fa-bars text-2xl"></i>
+                <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
         
         <!-- Mobile Menu Container -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-cozyPeach-200/20 flex flex-col gap-4 font-medium">
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-cozyPeach-200/20 flex flex-col gap-3 font-medium text-sm">
             <a href="#introduction" class="hover:text-cozyPeach-500 transition-colors">Giới thiệu</a>
-            <a href="#projects" class="hover:text-cozyPeach-500 transition-colors">Dự án học tập</a>
-            <a href="#reflection" class="hover:text-cozyPeach-500 transition-colors">Tổng kết</a>
-            <a href="#ai-tools" class="hover:text-cozyPeach-500 transition-colors">Công cụ tương tác</a>
-            <a href="https://drive.google.com/drive/folders/1ZIYHnp0cfUC8EgM_vMg93-nftUP3fxfU?usp=drive_link" target="_blank" class="w-full py-2.5 bg-cozyTeal-600 text-white text-center rounded-full transition-all flex items-center justify-center gap-2">
+            <a href="#projects" class="hover:text-cozyPeach-500 transition-colors">Bài tập của mình</a>
+            <a href="#reflection" class="hover:text-cozyPeach-500 transition-colors">Trải nghiệm</a>
+            <a href="#ai-tools" class="hover:text-cozyPeach-500 transition-colors">Công cụ nhỏ</a>
+            <a href="https://drive.google.com/drive/folders/1ZIYHnp0cfUC8EgM_vMg93-nftUP3fxfU?usp=drive_link" target="_blank" class="w-full py-2 bg-cozyTeal-600 text-white text-center rounded-full transition-all flex items-center justify-center gap-1.5 text-xs">
                 <i class="fa-brands fa-google-drive"></i> Xem bài tập trên GG drive
             </a>
         </div>
@@ -139,56 +134,60 @@
 
     <!-- HERO SECTION -->
     <header class="pt-32 pb-20 px-6 min-h-screen flex items-center relative overflow-hidden">
-        <!-- Floating Dreamy Backdrops -->
-        <div class="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-cozyTeal-100/40 filter blur-3xl -z-10 animate-float-1"></div>
-        <div class="absolute bottom-10 right-0 w-96 h-96 rounded-full bg-cozyPeach-100/50 filter blur-3xl -z-10 animate-float-2"></div>
+        <!-- Floating Backdrops -->
+        <div class="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-cozyTeal-100/30 filter blur-3xl -z-10 animate-float-1"></div>
+        <div class="absolute bottom-10 right-0 w-96 h-96 rounded-full bg-cozyPeach-100/40 filter blur-3xl -z-10 animate-float-2"></div>
 
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
-            <!-- Text Content -->
+            <!-- Text Content: Focuses on Self-Introduction -->
             <div class="lg:col-span-7 text-center lg:text-left space-y-6">
-                <div class="inline-block px-4 py-1.5 bg-cozyPeach-100 text-cozyPeach-600 rounded-full text-xs font-semibold tracking-wider">
-                    <i class="fa-solid fa-sparkles mr-1.5"></i> DIGITAL PORTFOLIO CÁ NHÂN
+                <div class="inline-block px-3 py-1 bg-cozyPeach-100 text-cozyPeach-600 rounded-full text-xs font-semibold tracking-wider">
+                    <i class="fa-solid fa-sparkles mr-1"></i> XIN CHÀO, MÌNH LÀ
                 </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-cozyTeal-700 leading-tight">
-                    Chào mừng bạn đến với <br class="hidden sm:block">
+                <!-- Main Header: The Name is the Largest Text -->
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-cozyTeal-700 leading-tight">
+                    Đoàn Thị <br class="hidden sm:block">
                     <span class="text-cozyPeach-500 relative">
-                        Không gian tư duy
-                        <span class="absolute left-0 bottom-1 w-full h-2 bg-cozyPeach-200/40 -z-10"></span>
+                        Phương Thảo
+                        <span class="absolute left-0 bottom-2 w-full h-2.5 bg-cozyPeach-200/30 -z-10"></span>
                     </span>
                 </h1>
-                <p class="text-base sm:text-lg text-cozyTeal-900/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    Nơi lưu giữ hành trình chuyển hóa nhận thức và rèn luyện kỹ năng số của <strong class="text-cozyTeal-700">Đoàn Thị Phương Thảo</strong> – sinh viên ngành Ngôn ngữ & Văn hóa Anh, ULIS. Dự án tổng hợp sự thấu hiểu về công nghệ số và ứng dụng AI có trách nhiệm.
+                <p class="text-lg font-medium text-cozyTeal-600">
+                    Sinh viên ngành Ngôn ngữ & Văn hóa Anh tại ULIS
                 </p>
-                <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
-                    <a href="#projects" class="px-6 py-3.5 bg-cozyPeach-500 hover:bg-cozyPeach-600 text-white rounded-full transition-all duration-300 shadow-lg glowing-shadow-peach font-medium flex items-center gap-2">
-                        Khám phá bài tập <i class="fa-solid fa-arrow-down-long"></i>
+                <p class="text-sm sm:text-base text-cozyTeal-900/80 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Đây là góc nhỏ nơi mình lưu giữ hành trình tìm hiểu về công nghệ số và thử nghiệm các ứng dụng trí tuệ nhân tạo. Mình tin rằng, ngay cả trong thời đại của máy móc, tư duy nhân văn và sự trung thực trong học tập của mỗi chúng ta vẫn là điều giá trị nhất [1]. Hy vọng những bài tự thực hành nhỏ của mình sẽ mang lại một chút góc nhìn thú vị cho bạn!
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                    <a href="#projects" class="px-5 py-3 bg-cozyPeach-500 hover:bg-cozyPeach-600 text-white rounded-full transition-all duration-300 shadow-md glowing-shadow-peach font-medium text-sm flex items-center gap-2">
+                        Ghé xem bài tập của mình <i class="fa-solid fa-arrow-down-long"></i>
                     </a>
-                    <a href="#introduction" class="px-6 py-3.5 border border-cozyTeal-600 text-cozyTeal-700 hover:bg-cozyTeal-50/50 rounded-full transition-all duration-300 font-medium">
-                        Tìm hiểu về tôi
+                    <a href="#introduction" class="px-5 py-3 border border-cozyTeal-600 text-cozyTeal-700 hover:bg-cozyTeal-50/50 rounded-full transition-all duration-300 font-medium text-sm">
+                        Tìm hiểu thêm về mình
                     </a>
                 </div>
             </div>
 
             <!-- Profile Image Holder matching Photo 1.jpg style -->
             <div class="lg:col-span-5 flex justify-center relative">
-                <!-- Outer glow container -->
-                <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-2xl p-3 bg-white shadow-2xl glowing-shadow border border-cozyPeach-100 animate-float-1">
+                <!-- Outer container -->
+                <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-2xl p-2.5 bg-white shadow-xl glowing-shadow border border-cozyPeach-100 animate-float-1">
                     <!-- Photo frame overlay with warm pastel vibes -->
                     <div class="w-full h-full rounded-xl overflow-hidden relative group">
-                        <img src="Hình 1.jpg" alt="Đoàn Thị Phương Thảo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-cozyTeal-900/40 via-transparent to-transparent opacity-80"></div>
-                        <!-- Warm floating overlay simulating cozy lighting -->
-                        <div class="absolute inset-0 bg-orange-300/10 mix-blend-color-burn pointer-events-none"></div>
+                        <img src="Hình 1.jpg" alt="Đoàn Thị Phương Thảo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103">
+                        <div class="absolute inset-0 bg-gradient-to-t from-cozyTeal-900/45 via-transparent to-transparent opacity-80"></div>
+                        <!-- Soft cozy filter overlay -->
+                        <div class="absolute inset-0 bg-orange-300/8 mix-blend-color-burn pointer-events-none"></div>
                     </div>
                     
-                    <!-- Styled Floating Paper Planes (Simulating elements from Photo 1.jpg) -->
+                    <!-- Paper Planes matching the ones in Photo 1.jpg -->
                     <!-- Yellow Plane -->
-                    <div class="absolute -bottom-6 -left-6 bg-amber-100 border border-amber-300 text-amber-600 p-3 rounded-xl shadow-lg transform -rotate-12 animate-bounce">
-                        <i class="fa-solid fa-paper-plane text-2xl"></i>
+                    <div class="absolute -bottom-5 -left-5 bg-amber-50 border border-amber-200 text-amber-600 p-2.5 rounded-xl shadow-md transform -rotate-12 animate-bounce">
+                        <i class="fa-solid fa-paper-plane text-xl"></i>
                     </div>
                     <!-- Coral Plane -->
-                    <div class="absolute -top-6 -right-6 bg-cozyPeach-100 border border-cozyPeach-200 text-cozyPeach-500 p-3 rounded-xl shadow-lg transform rotate-12">
-                        <i class="fa-solid fa-paper-plane text-2xl"></i>
+                    <div class="absolute -top-5 -right-5 bg-cozyPeach-100 border border-cozyPeach-200 text-cozyPeach-500 p-2.5 rounded-xl shadow-md transform rotate-12">
+                        <i class="fa-solid fa-paper-plane text-xl"></i>
                     </div>
                 </div>
             </div>
@@ -198,51 +197,51 @@
     <!-- SECTION 1: GIỚI THIỆU (ABOUT ME) -->
     <section id="introduction" class="py-24 px-6 bg-cozyTeal-50/40 relative">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
                 <span class="text-cozyPeach-500 font-semibold tracking-wider text-xs uppercase"><i class="fa-solid fa-user-astronaut mr-1"></i> Trang Giới Thiệu</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-cozyTeal-700">Chân Dung Người Đồng Hành</h2>
-                <p class="text-cozyTeal-900/70">Một góc nhìn chân thật về tư duy, mục tiêu học tập và định hướng công việc trong kỷ nguyên AI.</p>
+                <h2 class="text-2xl sm:text-3xl font-bold text-cozyTeal-700">Đôi Dòng Về Bản Thân Mình</h2>
+                <p class="text-sm text-cozyTeal-900/70">Một chiếc hồ sơ nhỏ để chúng mình hiểu nhau hơn trước khi đi sâu vào các sản phẩm học tập nhé!</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Info Card -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border border-cozyPeach-200/30 flex flex-col justify-between">
-                    <div class="space-y-6">
-                        <div class="w-12 h-12 rounded-xl bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-xl"><i class="fa-solid fa-id-card"></i></div>
-                        <h3 class="text-xl font-bold text-cozyTeal-700">Thông tin sinh viên</h3>
-                        <ul class="space-y-3.5 text-sm">
-                            <li class="flex items-center justify-between py-2 border-b border-cozyTeal-50"><span class="text-cozyTeal-900/60 font-medium">Họ & Tên:</span> <strong class="text-cozyTeal-700">Đoàn Thị Phương Thảo</strong></li>
-                            <li class="flex items-center justify-between py-2 border-b border-cozyTeal-50"><span class="text-cozyTeal-900/60 font-medium">MSSV:</span> <strong class="text-cozyTeal-700">25040188</strong></li>
-                            <li class="flex items-center justify-between py-2 border-b border-cozyTeal-50"><span class="text-cozyTeal-900/60 font-medium">Ngành học:</span> <strong class="text-cozyTeal-700">Ngôn ngữ & Văn hóa Anh</strong></li>
-                            <li class="flex items-center justify-between py-2 border-b border-cozyTeal-50"><span class="text-cozyTeal-900/60 font-medium">Trường:</span> <strong class="text-cozyTeal-700">Đại học Ngoại ngữ - ĐHQGHN</strong></li>
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-cozyPeach-200/20 flex flex-col justify-between">
+                    <div class="space-y-5">
+                        <div class="w-10 h-10 rounded-xl bg-cozyTeal-50 text-cozyTeal-600 flex items-center justify-center text-lg"><i class="fa-solid fa-id-card"></i></div>
+                        <h3 class="text-lg font-bold text-cozyTeal-700">Thông tin sinh viên</h3>
+                        <ul class="space-y-3 text-xs">
+                            <li class="flex items-center justify-between py-2 border-b border-cozyTeal-50/50"><span class="text-cozyTeal-900/60 font-medium">Họ & Tên:</span> <strong class="text-cozyTeal-700">Đoàn Thị Phương Thảo</strong></li>
+                            <li class="flex items-center justify-between py-2 border-b border-cozyTeal-50/50"><span class="text-cozyTeal-900/60 font-medium">Mã số sinh viên:</span> <strong class="text-cozyTeal-700">25040188</strong></li>
+                            <li class="flex items-center justify-between py-2 border-b border-cozyTeal-50/50"><span class="text-cozyTeal-900/60 font-medium">Ngành học:</span> <strong class="text-cozyTeal-700">Ngôn ngữ & Văn hóa Anh</strong></li>
+                            <li class="flex items-center justify-between py-2 border-b border-cozyTeal-50/50"><span class="text-cozyTeal-900/60 font-medium">Trường học:</span> <strong class="text-cozyTeal-700">Đại học Ngoại ngữ - ĐHQGHN</strong></li>
                         </ul>
                     </div>
-                    <div class="pt-6 border-t border-cozyTeal-50 mt-6">
-                        <p class="text-xs text-cozyTeal-900/50 italic"><i class="fa-solid fa-quote-left mr-1"></i> Luôn nỗ lực kết hợp tư duy nhân văn với công nghệ số để kiến tạo cơ hội mới.</p>
+                    <div class="pt-5 border-t border-cozyTeal-50 mt-5">
+                        <p class="text-[11px] text-cozyTeal-900/50 italic"><i class="fa-solid fa-quote-left mr-1"></i> Học ngoại ngữ giúp mình hiểu con người, còn công nghệ giúp mình kết nối họ lại gần nhau hơn [1].</p>
                     </div>
                 </div>
 
                 <!-- Goals Card -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border border-cozyPeach-200/30 space-y-6">
-                    <div class="w-12 h-12 rounded-xl bg-cozyPeach-100 text-cozyPeach-500 flex items-center justify-center text-xl"><i class="fa-solid fa-bullseye animate-pulse"></i></div>
-                    <h3 class="text-xl font-bold text-cozyTeal-700">Mục tiêu học tập</h3>
-                    <p class="text-sm leading-relaxed text-cozyTeal-900/70">
-                        Phát triển nền tảng kỹ năng số một cách toàn diện: từ quản trị thư mục khoa học, tư duy truy vấn học thuật chuẩn xác cho tới thành thạo nghệ thuật kỹ nghệ Prompt (Prompt Engineering). 
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-cozyPeach-200/20 space-y-5">
+                    <div class="w-10 h-10 rounded-xl bg-cozyPeach-100 text-cozyPeach-500 flex items-center justify-center text-lg"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3 class="text-lg font-bold text-cozyTeal-700">Mục tiêu của mình</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-cozyTeal-900/70">
+                        Khi mới bắt đầu môn học, mình chỉ muốn hoàn thành các bài thực hành trên máy tính. Nhưng qua từng chương học, mình nhận ra việc xây dựng một thói quen lưu trữ dữ liệu ngăn nắp và biết cách đặt câu hỏi thông minh cho AI là kỹ năng thực sự cần thiết cho công việc sau này [1].
                     </p>
-                    <p class="text-sm leading-relaxed text-cozyTeal-900/70">
-                        Đặt ra kỷ luật cá nhân nghiêm ngặt để chuyển tiếp từ tư duy "tiêu thụ công nghệ" thụ động sang tư duy "làm chủ công nghệ" chủ động, phục vụ cho chặng đường học tập dài hạn.
+                    <p class="text-xs sm:text-sm leading-relaxed text-cozyTeal-900/70">
+                        Mình hy vọng bản thân sẽ rèn luyện được một tư duy nhạy bén, biết gạn lọc thông tin chuẩn xác và không bị phụ thuộc một cách thụ động vào các công cụ tự động.
                     </p>
                 </div>
 
                 <!-- Vision Card -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border border-cozyPeach-200/30 space-y-6">
-                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl"><i class="fa-solid fa-compass"></i></div>
-                    <h3 class="text-xl font-bold text-cozyTeal-700">Định hướng & Mục tiêu Portfolio</h3>
-                    <p class="text-sm leading-relaxed text-cozyTeal-900/70">
-                        <strong>Định hướng cá nhân:</strong> Ứng dụng công nghệ dịch thuật và các mô hình ngôn ngữ lớn để bổ trợ chuyên sâu cho ngành Sư phạm tiếng Anh và truyền thông quốc tế, tối ưu năng suất làm việc nhóm.
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-cozyPeach-200/20 space-y-5">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-lg"><i class="fa-solid fa-compass"></i></div>
+                    <h3 class="text-lg font-bold text-cozyTeal-700">Định hướng & Portfolio</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-cozyTeal-900/70">
+                        <strong>Kế hoạch tương lai:</strong> Mình muốn áp dụng thế mạnh ngôn ngữ kết hợp với các công cụ dịch thuật và quản lý số để hỗ trợ cho việc giảng dạy tiếng Anh hoặc làm truyền thông quốc tế một cách chuyên nghiệp.
                     </p>
-                    <p class="text-sm leading-relaxed text-cozyTeal-900/70">
-                        <strong>Mục tiêu Portfolio này:</strong> Minh chứng rõ ràng về tiến trình tiến bộ tự thân, thể hiện cam kết sử dụng AI có đạo đức và tư duy phản biện. Trở thành một kho lưu trữ sản phẩm số trực quan để dễ dàng chia sẻ và kết nối học thuật.
+                    <p class="text-xs sm:text-sm leading-relaxed text-cozyTeal-900/70">
+                        <strong>Mục đích của trang này:</strong> Đây là một cuốn nhật ký trực quan lưu trữ mọi sự nỗ lực học hỏi của mình. Nhìn vào đây, mình có thể tự đánh giá xem bản thân đã tiến bộ ra sao, đồng thời cam kết luôn tuân thủ đạo đức học tập.
                     </p>
                 </div>
             </div>
@@ -252,11 +251,11 @@
     <!-- INTERMEDIATE ACTION BAR WITH GG DRIVE LINK -->
     <div class="py-12 px-6 bg-gradient-to-r from-cozyTeal-700 to-cozyTeal-900 text-white text-center relative overflow-hidden">
         <div class="max-w-4xl mx-auto space-y-4 relative z-10">
-            <h3 class="text-2xl font-bold">Thư mục Minh chứng Học thuật gốc trên Google Drive</h3>
-            <p class="text-sm opacity-80 max-w-xl mx-auto">Bạn muốn kiểm tra từng tệp báo cáo PDF chi tiết, sơ đồ tư duy chất lượng cao và các tệp văn bản bài làm tự thực hành của tôi?</p>
+            <h3 class="text-xl sm:text-2xl font-bold">Thư mục gốc của mình trên Google Drive</h3>
+            <p class="text-xs sm:text-sm opacity-85 max-w-xl mx-auto">Nếu bạn muốn xem chi tiết các tệp báo cáo PDF gốc, sơ đồ tư duy hay các hình ảnh chụp màn hình từng bước thực hành của mình, hãy nhấn nút phía dưới nhé!</p>
             <div class="pt-2">
-                <a href="https://drive.google.com/drive/folders/1ZIYHnp0cfUC8EgM_vMg93-nftUP3fxfU?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 bg-cozyPeach-500 hover:bg-cozyPeach-600 rounded-full text-white font-bold transition-all duration-300 shadow-lg transform hover:-translate-y-0.5">
-                    <i class="fa-brands fa-google-drive text-lg animate-bounce"></i> XEM BÀI TẬP TRÊN GG DRIVE GỐC
+                <a href="https://drive.google.com/drive/folders/1ZIYHnp0cfUC8EgM_vMg93-nftUP3fxfU?usp=drive_link" target="_blank" class="inline-flex items-center gap-1.5 px-6 py-3 bg-cozyPeach-500 hover:bg-cozyPeach-600 rounded-full text-white text-xs font-bold transition-all duration-300 shadow-md transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-google-drive text-sm animate-bounce"></i> XEM BÀI TẬP TRÊN GOOGLE DRIVE GỐC
                 </a>
             </div>
         </div>
@@ -267,161 +266,154 @@
     <!-- SECTION 2: DỰ ÁN HỌC TẬP (PROJECT HUB) -->
     <section id="projects" class="py-24 px-6 relative">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
                 <span class="text-cozyPeach-500 font-semibold tracking-wider text-xs uppercase"><i class="fa-solid fa-cubes mr-1"></i> Trang Dự Án</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-cozyTeal-700">Hành Trình Chinh Phục Thử Thách</h2>
-                <p class="text-cozyTeal-900/70">Click vào từng Nhiệm vụ bên dưới để hiển thị nội dung thực tế tôi đã tự làm, phản ánh tư duy phản biện và năng lực số cá nhân.</p>
+                <h2 class="text-2xl sm:text-3xl font-bold text-cozyTeal-700">Các Bài Tập Thực Hành Của Mình</h2>
+                <p class="text-sm text-cozyTeal-900/70">Bạn chỉ cần click chọn từng Nhiệm vụ ở menu bên trái, nội dung chi tiết mà mình đã tự nghiên cứu và làm bài sẽ hiện ra bên phải nhé.</p>
             </div>
 
             <!-- Interactive Tab System for Projects -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <!-- Project Menu Tabs List -->
-                <div class="lg:col-span-4 flex flex-row lg:flex-col gap-3 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 scrollbar-none">
-                    <button onclick="switchTab(1)" id="tab-btn-1" class="tab-btn active w-full text-left p-4 rounded-xl font-medium border transition-all duration-300 flex items-center gap-3 shrink-0 lg:shrink">
-                        <span class="w-8 h-8 rounded-lg bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-sm font-bold">01</span>
+                <div class="lg:col-span-4 flex flex-row lg:flex-col gap-2.5 overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 scrollbar-none">
+                    <button onclick="switchTab(1)" id="tab-btn-1" class="tab-btn active w-full text-left p-3.5 rounded-xl font-medium border transition-all duration-300 flex items-center gap-2.5 shrink-0 lg:shrink">
+                        <span class="w-7 h-7 rounded-lg bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-xs font-bold">01</span>
                         <div class="truncate">
-                            <p class="text-xs text-cozyTeal-900/40 font-bold uppercase">Nhiệm vụ 1</p>
-                            <p class="text-sm text-cozyTeal-900 font-bold">Quản lý tệp & Thư mục</p>
+                            <p class="text-[10px] text-cozyTeal-900/40 font-bold uppercase">Nhiệm vụ 1</p>
+                            <p class="text-xs text-cozyTeal-900 font-bold">Quản lý tệp & Thư mục</p>
                         </div>
                     </button>
-                    <button onclick="switchTab(2)" id="tab-btn-2" class="tab-btn w-full text-left p-4 rounded-xl font-medium border transition-all duration-300 flex items-center gap-3 shrink-0 lg:shrink">
-                        <span class="w-8 h-8 rounded-lg bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-sm font-bold">02</span>
+                    <button onclick="switchTab(2)" id="tab-btn-2" class="tab-btn w-full text-left p-3.5 rounded-xl font-medium border transition-all duration-300 flex items-center gap-2.5 shrink-0 lg:shrink">
+                        <span class="w-7 h-7 rounded-lg bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-xs font-bold">02</span>
                         <div class="truncate">
-                            <p class="text-xs text-cozyTeal-900/40 font-bold uppercase">Nhiệm vụ 2</p>
-                            <p class="text-sm text-cozyTeal-900 font-bold">Tìm kiếm & Đánh giá</p>
+                            <p class="text-[10px] text-cozyTeal-900/40 font-bold uppercase">Nhiệm vụ 2</p>
+                            <p class="text-xs text-cozyTeal-900 font-bold">Tìm kiếm & Đánh giá</p>
                         </div>
                     </button>
-                    <button onclick="switchTab(3)" id="tab-btn-3" class="tab-btn w-full text-left p-4 rounded-xl font-medium border transition-all duration-300 flex items-center gap-3 shrink-0 lg:shrink">
-                        <span class="w-8 h-8 rounded-lg bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-sm font-bold">03</span>
+                    <button onclick="switchTab(3)" id="tab-btn-3" class="tab-btn w-full text-left p-3.5 rounded-xl font-medium border transition-all duration-300 flex items-center gap-2.5 shrink-0 lg:shrink">
+                        <span class="w-7 h-7 rounded-lg bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-xs font-bold">03</span>
                         <div class="truncate">
-                            <p class="text-xs text-cozyTeal-900/40 font-bold uppercase">Nhiệm vụ 3</p>
-                            <p class="text-sm text-cozyTeal-900 font-bold">Kỹ nghệ Viết Prompt</p>
+                            <p class="text-[10px] text-cozyTeal-900/40 font-bold uppercase">Nhiệm vụ 3</p>
+                            <p class="text-xs text-cozyTeal-900 font-bold">Viết Prompt hiệu quả</p>
                         </div>
                     </button>
-                    <button onclick="switchTab(4)" id="tab-btn-4" class="tab-btn w-full text-left p-4 rounded-xl font-medium border transition-all duration-300 flex items-center gap-3 shrink-0 lg:shrink">
-                        <span class="w-8 h-8 rounded-lg bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-sm font-bold">04</span>
+                    <button onclick="switchTab(4)" id="tab-btn-4" class="tab-btn w-full text-left p-3.5 rounded-xl font-medium border transition-all duration-300 flex items-center gap-2.5 shrink-0 lg:shrink">
+                        <span class="w-7 h-7 rounded-lg bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-xs font-bold">04</span>
                         <div class="truncate">
-                            <p class="text-xs text-cozyTeal-900/40 font-bold uppercase">Nhiệm vụ 4</p>
-                            <p class="text-sm text-cozyTeal-900 font-bold">Hợp tác Nhóm trực tuyến</p>
+                            <p class="text-[10px] text-cozyTeal-900/40 font-bold uppercase">Nhiệm vụ 4</p>
+                            <p class="text-xs text-cozyTeal-900 font-bold">Làm việc nhóm trực tuyến</p>
                         </div>
                     </button>
-                    <button onclick="switchTab(5)" id="tab-btn-5" class="tab-btn w-full text-left p-4 rounded-xl font-medium border transition-all duration-300 flex items-center gap-3 shrink-0 lg:shrink">
-                        <span class="w-8 h-8 rounded-lg bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-sm font-bold">05</span>
+                    <button onclick="switchTab(5)" id="tab-btn-5" class="tab-btn w-full text-left p-3.5 rounded-xl font-medium border transition-all duration-300 flex items-center gap-2.5 shrink-0 lg:shrink">
+                        <span class="w-7 h-7 rounded-lg bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-xs font-bold">05</span>
                         <div class="truncate">
-                            <p class="text-xs text-cozyTeal-900/40 font-bold uppercase">Nhiệm vụ 5</p>
-                            <p class="text-sm text-cozyTeal-900 font-bold">Sáng tạo nội dung với AI</p>
+                            <p class="text-[10px] text-cozyTeal-900/40 font-bold uppercase">Nhiệm vụ 5</p>
+                            <p class="text-xs text-cozyTeal-900 font-bold">Sáng tạo nội dung với AI</p>
                         </div>
                     </button>
-                    <button onclick="switchTab(6)" id="tab-btn-6" class="tab-btn w-full text-left p-4 rounded-xl font-medium border transition-all duration-300 flex items-center gap-3 shrink-0 lg:shrink">
-                        <span class="w-8 h-8 rounded-lg bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-sm font-bold">06</span>
+                    <button onclick="switchTab(6)" id="tab-btn-6" class="tab-btn w-full text-left p-3.5 rounded-xl font-medium border transition-all duration-300 flex items-center gap-2.5 shrink-0 lg:shrink">
+                        <span class="w-7 h-7 rounded-lg bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-xs font-bold">06</span>
                         <div class="truncate">
-                            <p class="text-xs text-cozyTeal-900/40 font-bold uppercase">Nhiệm vụ 6</p>
-                            <p class="text-sm text-cozyTeal-900 font-bold">Sử dụng AI có trách nhiệm</p>
+                            <p class="text-[10px] text-cozyTeal-900/40 font-bold uppercase">Nhiệm vụ 6</p>
+                            <p class="text-xs text-cozyTeal-900 font-bold">Sử dụng AI có trách nhiệm</p>
                         </div>
                     </button>
                 </div>
 
                 <!-- Display Content Panel -->
-                <div class="lg:col-span-8 bg-white p-6 sm:p-10 rounded-2xl shadow-xl border border-cozyPeach-100 glowing-shadow relative min-h-[500px]">
+                <div class="lg:col-span-8 bg-white p-5 sm:p-8 rounded-2xl shadow-lg border border-cozyPeach-100 glowing-shadow relative min-h-[480px]">
                     
                     <!-- TAB 1 CONTENT -->
-                    <div id="tab-content-1" class="tab-pane space-y-6">
-                        <div class="flex justify-between items-start border-b border-cozyPeach-100 pb-4">
+                    <div id="tab-content-1" class="tab-pane space-y-5 text-sm">
+                        <div class="flex justify-between items-start border-b border-cozyPeach-100 pb-3">
                             <div>
-                                <h3 class="text-2xl font-bold text-cozyTeal-700">Nhiệm vụ 1: Thao tác cơ bản với tệp tin và thư mục</h3>
-                                <p class="text-xs text-cozyTeal-900/50 mt-1">Mục tiêu: Tổ chức không gian làm việc khoa học, đồng bộ và nhất quán.</p>
+                                <h3 class="text-xl font-bold text-cozyTeal-700">Nhiệm vụ 1: Thao tác cơ bản với tệp tin và thư mục</h3>
+                                <p class="text-xs text-cozyTeal-900/50 mt-1">Làm quen với cách sắp xếp không gian lưu trữ dữ liệu cá nhân trên máy tính.</p>
                             </div>
-                            <span class="px-3 py-1 bg-teal-100 text-cozyTeal-700 text-xs rounded-full font-bold">Thành thạo</span>
                         </div>
-                        <p class="text-sm text-cozyTeal-900/80 leading-relaxed">
-                            Bài thực hành rèn luyện kỹ năng lưu trữ thông tin có cấu trúc trên hệ điều hành Windows. Sinh viên tự thiết lập cây thư mục tối ưu, thao tác đổi tên, di chuyển tệp tin và thực hiện các quy trình cứu hộ dữ liệu từ Thùng rác (Recycle Bin).
+                        <p class="text-cozyTeal-900/80 leading-relaxed text-xs sm:text-sm">
+                            Trong bài tập này, mình đã học cách dọn dẹp và tổ chức lại các tệp tin trên hệ điều hành Windows một cách ngăn nắp hơn. Mình tự tạo cây thư mục có cấu trúc rõ ràng, thực hành đổi tên, sao chép và di chuyển tệp tin để làm quen với quy tắc lưu trữ thông minh.
                         </p>
-                        <div class="space-y-4">
-                            <h4 class="text-sm font-bold text-cozyPeach-600 uppercase tracking-wider"><i class="fa-solid fa-folder-tree mr-1.5"></i> Cấu trúc cây thư mục mẫu đã tạo</h4>
-                            <div class="bg-cozyTeal-50/50 p-4 rounded-xl border border-cozyTeal-100 font-mono text-xs text-cozyTeal-900 space-y-2">
-                                <div>📁 Ổ đĩa D: (hoặc E: / Thư mục Documents)</div>
+                        <div class="space-y-3">
+                            <h4 class="text-xs font-bold text-cozyPeach-600 uppercase tracking-wider"><i class="fa-solid fa-folder-tree mr-1"></i> Cây thư mục thực tế mình đã lập:</h4>
+                            <div class="bg-cozyTeal-50/50 p-4 rounded-xl border border-cozyTeal-100 font-mono text-xs text-cozyTeal-900 space-y-1.5">
+                                <div>📁 Ổ đĩa D: (hoặc thư mục Documents)</div>
                                 <div class="pl-4">└── 📁 <strong class="text-cozyTeal-700">ThucHanh_DoanThiPhuongThao</strong> <span class="text-cozyPeach-500 italic">(Thư mục cha lớn)</span></div>
                                 <div class="pl-8">├── 📁 <strong>TaiLieu</strong> <span class="text-cozyTeal-900/50">(Thư mục con phân loại)</span></div>
-                                <div class="pl-12">├── 📄 GhiChuQuanTrong.txt <span class="text-cozyTeal-900/50">(Sao chép & Khôi phục thành công từ Thùng rác)</span></div>
-                                <div class="pl-12">└── 📄 DiChuyen.txt <span class="text-cozyTeal-900/50">(Bị xóa vĩnh viễn không qua Thùng rác bằng Shift+Delete)</span></div>
+                                <div class="pl-12">├── 📄 GhiChuQuanTrong.txt <span class="text-cozyTeal-900/50">(Sao chép từ thư mục cha và khôi phục từ Thùng rác)</span></div>
+                                <div class="pl-12">└── 📄 DiChuyen.txt <span class="text-cozyTeal-900/50">(Được cắt từ thư mục cha sang đây)</span></div>
                             </div>
                         </div>
-                        <div class="space-y-3">
-                            <h4 class="text-sm font-bold text-cozyTeal-700">Minh chứng thao tác thực tế:</h4>
-                            <ul class="space-y-2.5 text-xs text-cozyTeal-900/80 list-disc pl-5 leading-relaxed">
-                                <li><strong>Sao chép tệp tin (Copy & Paste):</strong> Tạo tệp <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">GhiChu.txt</code> trong thư mục cha, đổi tên thành <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">GhiChuQuanTrong.txt</code>, tiến hành copy và paste một bản sao vào thư mục <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">TaiLieu</code>.</li>
-                                <li><strong>Di chuyển tệp tin (Cut & Paste):</strong> Tạo tệp <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">DiChuyen.txt</code> ở thư mục cha, dùng lệnh Cut để di chuyển hoàn toàn vào thư mục <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">TaiLieu</code>, tối ưu không gian sạch sẽ.</li>
-                                <li><strong>Xóa & Khôi phục nâng cao:</strong> Xóa <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">GhiChuQuanTrong.txt</code> sang Recycle Bin và Restore thành công. Đối với <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">DiChuyen.txt</code>, thực hiện tổ hợp phím <kbd class="bg-cozyTeal-100 px-1 rounded font-mono text-[10px]">Shift + Delete</kbd> để xóa sạch vĩnh viễn nhằm bảo mật thông tin.</li>
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold text-cozyTeal-700">Tóm tắt các thao tác chính mình đã làm:</h4>
+                            <ul class="space-y-2 text-xs text-cozyTeal-900/80 list-disc pl-5 leading-relaxed">
+                                <li><strong>Sao chép tệp tin (Copy & Paste):</strong> Mình tạo tệp <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">GhiChu.txt</code>, đổi tên thành <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">GhiChuQuanTrong.txt</code>, sau đó copy và paste một bản sao vào thư mục <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">TaiLieu</code>.</li>
+                                <li><strong>Di chuyển tệp tin (Cut & Paste):</strong> Mình tạo tệp <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">DiChuyen.txt</code> ở thư mục cha, dùng lệnh Cut để di chuyển hẳn tệp này vào trong thư mục <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">TaiLieu</code>, giúp thư mục cha sạch sẽ hơn.</li>
+                                <li><strong>Xóa & Cứu hộ dữ liệu:</strong> Mình thử xóa tệp trong thư mục con vào Recycle Bin rồi khôi phục lại (Restore). Sau đó, đối với tệp <code class="bg-cozyTeal-50 px-1 py-0.5 rounded">DiChuyen.txt</code>, mình nhấn tổ hợp phím <kbd class="bg-cozyTeal-100 px-1 rounded font-mono text-[10px]">Shift + Delete</kbd> để xóa vĩnh viễn nhằm dọn dẹp ổ cứng.</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- TAB 2 CONTENT -->
-                    <div id="tab-content-2" class="tab-pane hidden space-y-6">
-                        <div class="flex justify-between items-start border-b border-cozyPeach-100 pb-4">
+                    <div id="tab-content-2" class="tab-pane hidden space-y-5 text-sm">
+                        <div class="flex justify-between items-start border-b border-cozyPeach-100 pb-3">
                             <div>
-                                <h3 class="text-2xl font-bold text-cozyTeal-700">Nhiệm vụ 2: Tìm kiếm & Đánh giá thông tin học thuật</h3>
-                                <p class="text-xs text-cozyTeal-900/50 mt-1">Mục tiêu: Chọn lọc nguồn học liệu uy tín theo mô hình CRAAP.</p>
+                                <h3 class="text-xl font-bold text-cozyTeal-700">Nhiệm vụ 2: Tìm kiếm & Đánh giá thông tin học thuật</h3>
+                                <p class="text-xs text-cozyTeal-900/50 mt-1">Lọc học liệu uy tín phục vụ nghiên cứu thông qua mô hình CRAAP.</p>
                             </div>
-                            <span class="px-3 py-1 bg-amber-100 text-amber-700 text-xs rounded-full font-bold">Nâng cao</span>
                         </div>
                         
-                        <div class="space-y-3">
-                            <h4 class="text-sm font-bold text-cozyPeach-600 uppercase tracking-wider">Chủ đề nghiên cứu lựa chọn:</h4>
-                            <p class="text-sm font-bold text-cozyTeal-900 leading-relaxed">
-                                "Ảnh hưởng của phương pháp học hợp tác (Collaborative Learning) đối với kỹ năng nói tiếng Anh của sinh viên đại học"
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold text-cozyPeach-600 uppercase tracking-wider">Đề tài mình đã chọn để tìm kiếm:</h4>
+                            <p class="font-bold text-cozyTeal-900 leading-relaxed text-xs sm:text-sm">
+                                "Ảnh hưởng của phương pháp học hợp tác (Collaborative Learning) đối với kỹ năng nói tiếng Anh của sinh viên đại học" [1]
                             </p>
                         </div>
 
-                        <div class="space-y-3">
-                            <h4 class="text-sm font-bold text-cozyTeal-700">Công thức tìm kiếm Boolean thông minh:</h4>
-                            <div class="bg-cozyTeal-50 p-4 rounded-xl border border-cozyTeal-100 font-mono text-xs text-cozyTeal-700 leading-relaxed">
-                                ("collaborative learning" OR "cooperative learning") AND ("speaking skill" OR "oral proficiency") AND ("EFL" OR "English language teaching")
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold text-cozyTeal-700">Câu lệnh Boolean mình đã thiết kế để tra cứu:</h4>
+                            <div class="bg-cozyTeal-50 p-3.5 rounded-xl border border-cozyTeal-100 font-mono text-[11px] text-cozyTeal-700 leading-relaxed break-words">
+                                ("collaborative learning" OR "cooperative learning") AND ("speaking skill" OR "oral proficiency") AND ("EFL" OR "English language teaching") [1]
                             </div>
                         </div>
 
                         <!-- CRAAP Table summary -->
-                        <div class="space-y-3">
-                            <h4 class="text-sm font-bold text-cozyTeal-700">Tổng hợp học liệu đã đánh giá mẫu (Trích xuất 4/12 nguồn tiêu biểu):</h4>
+                        <div class="space-y-2.5">
+                            <h4 class="text-xs font-bold text-cozyTeal-700">Bảng đánh giá một số tài liệu học thuật tiêu biểu (tổng số 12 tài liệu):</h4>
                             <div class="overflow-x-auto">
                                 <table class="w-full text-left text-xs border-collapse">
                                     <thead>
                                         <tr class="bg-cozyTeal-50 text-cozyTeal-700 border-b border-cozyTeal-100">
-                                            <th class="p-2 font-bold">STT</th>
-                                            <th class="p-2 font-bold">Tác giả & Năm</th>
-                                            <th class="p-2 font-bold">Cơ quan / Tạp chí</th>
-                                            <th class="p-2 font-bold">Phương pháp nghiên cứu</th>
+                                            <th class="p-2 font-bold">Nguồn & Tác giả</th>
+                                            <th class="p-2 font-bold">Nhà xuất bản / Tạp chí</th>
+                                            <th class="p-2 font-bold">Phương pháp chính</th>
                                             <th class="p-2 font-bold">Đánh giá CRAAP</th>
                                         </tr>
                                     </thead>
                                     <tbody class="divide-y divide-cozyTeal-50 text-cozyTeal-900/80">
                                         <tr>
-                                            <td class="p-2">1</td>
                                             <td class="p-2 font-semibold">Neomy Storch (2002)</td>
                                             <td class="p-2">Language Learning (Q1)</td>
-                                            <td class="p-2">Theo dõi dọc 10 cặp học viên ESL</td>
-                                            <td class="p-2 text-cozyPeach-600 font-semibold">Rất Cao (Nền tảng)</td>
+                                            <td class="p-2">Nghiên cứu lớp học (10 cặp)</td>
+                                            <td class="p-2 text-cozyPeach-600 font-semibold">Rất Cao (Nền tảng lâu năm)</td>
                                         </tr>
                                         <tr>
-                                            <td class="p-2">2</td>
-                                            <td class="p-2 font-semibold">Al-Tamimi (2014)</td>
-                                            <td class="p-2">Int. Journal of Linguistics</td>
-                                            <td class="p-2">Thực nghiệm bán đối chứng (60 sinh viên)</td>
-                                            <td class="p-2 text-cozyPeach-600 font-semibold">Cao (Thực tiễn tốt)</td>
+                                            <td class="p-2 font-semibold">Al-Tamimi & Attamimi (2014)</td>
+                                            <td class="p-2">International Journal of Linguistics</td>
+                                            <td class="p-2">Thực nghiệm bán đối chứng</td>
+                                            <td class="p-2 text-cozyPeach-600 font-semibold">Cao (Thực nghiệm rõ ràng)</td>
                                         </tr>
                                         <tr>
-                                            <td class="p-2">3</td>
-                                            <td class="p-2 font-semibold">Alzubi et al. (2024)</td>
-                                            <td class="p-2">J. of Pedagogical Research</td>
-                                            <td class="p-2">Thực nghiệm, phỏng vấn thực tế</td>
-                                            <td class="p-2 text-cozyPeach-600 font-semibold">Rất Cao (Mới & Sát)</td>
+                                            <td class="p-2 font-semibold">Ali A. Alzubi et al. (2024)</td>
+                                            <td class="p-2">Journal of Pedagogical Research</td>
+                                            <td class="p-2">Nghiên cứu can thiệp thực tế</td>
+                                            <td class="p-2 text-cozyPeach-600 font-semibold">Rất Cao (Mới & Rất sát đề tài)</td>
                                         </tr>
                                         <tr>
-                                            <td class="p-2">4</td>
-                                            <td class="p-2 font-semibold">Goh & Burns (2012)</td>
-                                            <td class="p-2">Cambridge Univ. Press</td>
-                                            <td class="p-2">Sách chuyên khảo sư phạm</td>
-                                            <td class="p-2 text-cozyPeach-600 font-semibold">Cực Cao (Cơ sở lý thuyết)</td>
+                                            <td class="p-2 font-semibold">Christine Goh & Anne Burns (2012)</td>
+                                            <td class="p-2">Cambridge University Press</td>
+                                            <td class="p-2">Sách chuyên khảo lý thuyết</td>
+                                            <td class="p-2 text-cozyPeach-600 font-semibold">Cực Cao (Độ uy tín xuất sắc)</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -430,41 +422,39 @@
                     </div>
 
                     <!-- TAB 3 CONTENT -->
-                    <div id="tab-content-3" class="tab-pane hidden space-y-6">
-                        <div class="flex justify-between items-start border-b border-cozyPeach-100 pb-4">
+                    <div id="tab-content-3" class="tab-pane hidden space-y-5 text-sm">
+                        <div class="flex justify-between items-start border-b border-cozyPeach-100 pb-3">
                             <div>
-                                <h3 class="text-2xl font-bold text-cozyTeal-700">Nhiệm vụ 3: Thiết kế Prompt hiệu quả (CLEAR Framework)</h3>
-                                <p class="text-xs text-cozyTeal-900/50 mt-1">Mục tiêu: Làm chủ công nghệ sinh dữ liệu thông qua Prompt có cấu trúc.</p>
+                                <h3 class="text-xl font-bold text-cozyTeal-700">Nhiệm vụ 3: Cách viết Prompt hiệu quả học tập</h3>
+                                <p class="text-xs text-cozyTeal-900/50 mt-1">So sánh các kỹ thuật viết câu lệnh để có kết quả phản hồi tốt nhất từ AI.</p>
                             </div>
-                            <span class="px-3 py-1 bg-cozyPeach-100 text-cozyPeach-600 text-xs rounded-full font-bold">Chuyên nghiệp</span>
                         </div>
-                        <p class="text-sm text-cozyTeal-900/80 leading-relaxed">
-                            Thay vì ra lệnh sơ sài dẫn đến kết quả hời hợt từ AI, tôi thực hiện kỹ thuật so sánh 3 phiên bản Prompt (Zero-shot, Cụ thể hóa, và nâng cao CLEAR kết hợp Few-shot/CoT) cho 3 tác vụ học tập thực tế.
+                        <p class="text-cozyTeal-900/80 leading-relaxed text-xs sm:text-sm">
+                            Khi học cách viết prompt, mình tự chọn ra 3 tác vụ học tập phổ biến và viết 3 cấp độ lệnh tăng dần từ cơ bản (Zero-shot) đến cấu trúc CLEAR nâng cao (kèm Few-shot và Chain-of-Thought) [1]. Việc này giúp mình hiểu sâu cách AI xử lý dữ liệu.
                         </p>
                         
-                        <div class="space-y-4">
-                            <!-- Task Showcase -->
-                            <div class="p-4 bg-cozyTeal-50/40 rounded-xl border border-cozyTeal-100 space-y-2">
-                                <h4 class="text-sm font-bold text-cozyTeal-700 flex items-center gap-1.5"><i class="fa-solid fa-code"></i> Minh họa Tác vụ tiêu biểu: Giải thích mối quan hệ Vật chất - Ý thức</h4>
-                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs pt-2">
+                        <div class="space-y-3">
+                            <div class="p-3.5 bg-cozyTeal-50/40 rounded-xl border border-cozyTeal-100 space-y-2">
+                                <h4 class="text-xs font-bold text-cozyTeal-700 flex items-center gap-1.5"><i class="fa-solid fa-code"></i> Tác vụ ví dụ: Giải thích quan hệ Vật chất - Ý thức trong Triết học Mác - Lênin</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs pt-1">
                                     <div class="bg-white p-3 rounded-lg border border-cozyTeal-100">
-                                        <p class="font-bold text-cozyTeal-900/40 uppercase mb-1">Cấp độ 1: Zero-shot</p>
+                                        <p class="font-bold text-cozyTeal-900/40 uppercase mb-1">Cấp độ 1: Lệnh đơn giản</p>
                                         <p class="italic text-cozyTeal-900">"Ý thức vật chất trong triết học là gì?"</p>
-                                        <p class="text-red-500 font-medium mt-2"><i class="fa-solid fa-circle-xmark"></i> AI bối rối, trả lời máy móc và dễ sai thuật ngữ.</p>
+                                        <p class="text-red-500 font-semibold mt-1.5"><i class="fa-solid fa-circle-xmark"></i> AI bối rối, dịch thuật ngữ bị sai hoàn toàn bản chất.</p>
                                     </div>
                                     <div class="bg-white p-3 rounded-lg border border-cozyTeal-100">
                                         <p class="font-bold text-cozyTeal-900/40 uppercase mb-1">Cấp độ 2: Tăng tính cụ thể</p>
-                                        <p class="italic text-cozyTeal-900">"Hãy giải thích rõ ràng khái niệm vật chất, ý thức và mối quan hệ giữa chúng trong Triết học Mác-Lênin. Cho ví dụ dễ hiểu."</p>
-                                        <p class="text-amber-600 font-medium mt-2"><i class="fa-solid fa-triangle-exclamation"></i> Đúng lý thuyết thô nhưng còn nặng nề hàn lâm.</p>
+                                        <p class="italic text-cozyTeal-900 text-[11px] leading-tight">"Hãy giải thích rõ khái niệm vật chất, ý thức và mối quan hệ giữa chúng trong Triết học Mác-Lênin. Cho ví dụ dễ hiểu."</p>
+                                        <p class="text-amber-600 font-semibold mt-1.5"><i class="fa-solid fa-triangle-exclamation"></i> Có lý thuyết thô nhưng vẫn nặng nề, khó nhớ.</p>
                                     </div>
                                     <div class="bg-white p-3 rounded-lg border border-cozyPeach-200 bg-cozyPeach-100/10">
-                                        <p class="font-bold text-cozyPeach-500 uppercase mb-1">Cấp độ 3: CLEAR + Few-shot</p>
-                                        <p class="italic text-cozyTeal-900 text-[11px] leading-tight">
-                                            <strong>[Role]:</strong> Giáo sư Triết học xuất sắc. <br>
-                                            <strong>[Explicit Instruction]:</strong> Đính chính thuật ngữ và giải thích quan hệ biện chứng 2 chiều. <br>
-                                            <strong>[Few-shot Example]:</strong> Cung cấp mẫu phân tích quy luật Lượng-Chất thông qua việc tích lũy số tiết học...
+                                        <p class="font-bold text-cozyPeach-500 uppercase mb-1">Cấp độ 3: Lệnh cấu trúc CLEAR</p>
+                                        <p class="italic text-cozyTeal-900 text-[10px] leading-tight">
+                                            <strong>[Role]:</strong> Giáo sư Triết học có biệt tài giảng giải. <br>
+                                            <strong>[Explicit Instruction]:</strong> Đính chính lỗi thuật ngữ và giải thích quan hệ biện chứng 2 chiều. <br>
+                                            <strong>[Few-shot]:</strong> Cung cấp mẫu phân tích quy luật Lượng-Chất để AI học theo.
                                         </p>
-                                        <p class="text-cozyTeal-700 font-bold mt-2"><i class="fa-solid fa-circle-check"></i> Kết quả xuất sắc, dễ hiểu và bám sát đời sống sinh viên.</p>
+                                        <p class="text-cozyTeal-700 font-bold mt-1.5"><i class="fa-solid fa-circle-check"></i> Kết quả xuất sắc, lấy ví dụ thực tế học tập siêu gần gũi.</p>
                                     </div>
                                 </div>
                             </div>
@@ -472,96 +462,94 @@
                     </div>
 
                     <!-- TAB 4 CONTENT -->
-                    <div id="tab-content-4" class="tab-pane hidden space-y-6">
-                        <div class="flex justify-between items-start border-b border-cozyPeach-100 pb-4">
+                    <div id="tab-content-4" class="tab-pane hidden space-y-5 text-sm">
+                        <div class="flex justify-between items-start border-b border-cozyPeach-100 pb-3">
                             <div>
-                                <h3 class="text-2xl font-bold text-cozyTeal-700">Nhiệm vụ 4: Ứng dụng công cụ hợp tác trực tuyến</h3>
-                                <p class="text-xs text-cozyTeal-900/50 mt-1">Mục tiêu: Đồng bộ hóa hiệu suất nhóm thông qua Trello, Google Docs và Drive.</p>
+                                <h3 class="text-xl font-bold text-cozyTeal-700">Nhiệm vụ 4: Hợp tác làm việc nhóm trực tuyến</h3>
+                                <p class="text-xs text-cozyTeal-900/50 mt-1">Cùng đồng đội vận hành hệ thống công cụ hỗ trợ công việc chung.</p>
                             </div>
-                            <span class="px-3 py-1 bg-teal-100 text-cozyTeal-700 text-xs rounded-full font-bold">Thành thạo</span>
                         </div>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="p-4 bg-purple-50 rounded-xl border border-purple-100 space-y-2">
-                                <h4 class="font-bold text-sm text-purple-700"><i class="fa-brands fa-trello mr-1"></i> Trello</h4>
-                                <p class="text-xs text-cozyTeal-900/70">Quản trị danh mục công việc cá nhân bằng bảng Kanban, gán nhãn, cài đặt hạn chót nghiêm ngặt cho từng tác vụ.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <div class="p-3.5 bg-purple-50 rounded-xl border border-purple-100 space-y-1.5">
+                                <h4 class="font-bold text-xs text-purple-700"><i class="fa-brands fa-trello mr-1"></i> Quản lý trên Trello</h4>
+                                <p class="text-[11px] text-cozyTeal-900/70">Mình tự tạo thẻ nhiệm vụ cá nhân, lập danh sách kiểm tra cụ thể và đặt hạn chót rõ ràng cho công việc được giao.</p>
                             </div>
-                            <div class="p-4 bg-blue-50 rounded-xl border border-blue-100 space-y-2">
-                                <h4 class="font-bold text-sm text-blue-700"><i class="fa-solid fa-file-word mr-1"></i> Google Docs</h4>
-                                <p class="text-xs text-cozyTeal-900/70">Biên soạn trực tiếp hơn 1/3 nội dung báo cáo (Mở đầu, Thân đoạn 1, Mở rộng). Linh hoạt dùng chế độ đề xuất để tôn trọng bài viết của đồng đội.</p>
+                            <div class="p-3.5 bg-blue-50 rounded-xl border border-blue-100 space-y-1.5">
+                                <h4 class="font-bold text-xs text-blue-700"><i class="fa-solid fa-file-word mr-1"></i> Soạn thảo trên Docs</h4>
+                                <p class="text-[11px] text-cozyTeal-900/70">Mình biên soạn hơn 1/3 nội dung của nhóm (Introduction, Body 1, Extension). Dùng chế độ đề xuất thay vì sửa thẳng để tôn trọng ý kiến các bạn.</p>
                             </div>
-                            <div class="p-4 bg-green-50 rounded-xl border border-green-100 space-y-2">
-                                <h4 class="font-bold text-sm text-green-700"><i class="fa-brands fa-google-drive mr-1"></i> Google Drive</h4>
-                                <p class="text-xs text-cozyTeal-900/70">Thiết lập cấu trúc thư mục con chuẩn hóa, giải cứu dữ liệu học tập an toàn tuyệt đối khi máy tính cá nhân bị hỏng đột ngột.</p>
+                            <div class="p-3.5 bg-green-50 rounded-xl border border-green-100 space-y-1.5">
+                                <h4 class="font-bold text-xs text-green-700"><i class="fa-brands fa-google-drive mr-1"></i> Đồng bộ trên Drive</h4>
+                                <p class="text-[11px] text-cozyTeal-900/70">Mình lập hệ thống thư mục con cho nhóm, đặt tên nhất quán. Tuần rồi máy tính mình bị hỏng đột ngột nhưng nhờ dữ liệu đồng bộ đám mây nên không bị mất tiến độ!</p>
                             </div>
                         </div>
 
-                        <div class="space-y-3 bg-cozyPeach-100/20 p-5 rounded-xl border border-cozyPeach-200/40">
-                            <h4 class="text-sm font-bold text-cozyPeach-600"><i class="fa-solid fa-circle-exclamation mr-1"></i> Giải quyết xung đột thực tế trong tương tác nhóm:</h4>
+                        <div class="space-y-2 bg-cozyPeach-100/15 p-4 rounded-xl border border-cozyPeach-200/30">
+                            <h4 class="text-xs font-bold text-cozyPeach-600"><i class="fa-solid fa-circle-exclamation mr-1"></i> Câu chuyện gỡ rối khó khăn của nhóm mình:</h4>
                             <p class="text-xs text-cozyTeal-900/80 leading-relaxed">
-                                <strong>Thử thách 1 (Trì trệ cập nhật Trello):</strong> Thành viên làm tốt nhưng lười kéo thẻ việc. <br>
-                                <span class="text-cozyTeal-700 font-semibold">→ Giải quyết:</span> Thực hiện chia sẻ màn hình hướng dẫn trực quan trong buổi họp giữa tuần, thống nhất quy định dành 2 phút cập nhật tiến độ trước 10:00 tối mỗi ngày. <br><br>
-                                <strong>Thử thách 2 (Hỗn loạn định dạng sát deadline):</strong> Quá nhiều người cùng chỉnh sửa văn bản Docs trực tiếp. <br>
-                                <span class="text-cozyTeal-700 font-semibold">→ Giải quyết:</span> Khoanh vùng giới hạn khu vực chỉnh sửa của mình, thuyết phục cả nhóm chuyển toàn bộ sang chế độ "Suggesting" (Đề xuất) giúp bảo toàn cấu trúc tệp.
+                                <strong>Vấn đề 1 (Các bạn quên cập nhật Trello):</strong> Dẫn đến hệ thống báo quá hạn khiến mình khó theo dõi tiến độ tổng thể. <br>
+                                <span class="text-cozyTeal-700 font-semibold">→ Cách giải quyết:</span> Trong buổi họp giữa tuần, mình đã chia sẻ màn hình hướng dẫn lại thao tác, đồng thời rủ cả nhóm thống nhất dành đúng 2 phút trước 10:00 tối để cập nhật thẻ việc. <br><br>
+                                <strong>Vấn đề 2 ( docs bị rối định dạng sát deadline):</strong> Do nhiều người sửa cùng lúc. <br>
+                                <span class="text-cozyTeal-700 font-semibold">→ Cách giải quyết:</span> Mình chủ động khoanh vùng khu vực mình chỉnh sửa, đồng thời thuyết phục các bạn chuyển sang chế độ "Suggesting" (Đề xuất) để quản lý chỉnh sửa dễ dàng hơn.
                             </p>
                         </div>
                     </div>
 
                     <!-- TAB 5 CONTENT -->
-                    <div id="tab-content-5" class="tab-pane hidden space-y-6">
-                        <div class="flex justify-between items-start border-b border-cozyPeach-100 pb-4">
+                    <div id="tab-content-5" class="tab-pane hidden space-y-5 text-sm">
+                        <div class="flex justify-between items-start border-b border-cozyPeach-100 pb-3">
                             <div>
-                                <h3 class="text-2xl font-bold text-cozyTeal-700">Nhiệm vụ 5: Sử dụng AI tạo sinh hỗ trợ sáng tạo nội dung</h3>
-                                <p class="text-xs text-cozyTeal-900/50 mt-1">Mục tiêu: Kiến tạo sản phẩm Infographic chất lượng thông qua sự bổ trợ của Generative AI.</p>
+                                <h3 class="text-xl font-bold text-cozyTeal-700">Nhiệm vụ 5: Ứng dụng AI để sáng tạo nội dung số</h3>
+                                <p class="text-xs text-cozyTeal-900/50 mt-1">Phối hợp các công cụ AI để thiết kế sản phẩm Infographic trực quan.</p>
                             </div>
-                            <span class="px-3 py-1 bg-amber-100 text-amber-700 text-xs rounded-full font-bold">Nâng cao</span>
                         </div>
 
-                        <div class="p-4 bg-cozyTeal-50/40 rounded-xl border border-cozyTeal-100 space-y-3">
-                            <h4 class="text-sm font-bold text-cozyTeal-700">Sản phẩm thực tế: Thiết kế Infographic "Tác hại của việc lướt TikTok lên não bộ"</h4>
+                        <div class="p-3.5 bg-cozyTeal-50/40 rounded-xl border border-cozyTeal-100 space-y-2">
+                            <h4 class="text-xs font-bold text-cozyTeal-700">Dự án Infographic: "Tác hại của việc lướt TikTok lên não bộ"</h4>
                             <p class="text-xs text-cozyTeal-900/80 leading-relaxed">
-                                Kết quả đầu ra thô của ChatGPT được tôi kiểm chứng thực tế và tích hợp số liệu khoa học từ bài báo uy tín về <strong>"TikTok Brain"</strong> đối với khả năng tập trung của trẻ vị thành niên Trung Quốc.
+                                Gợi ý ban đầu của ChatGPT khá đơn giản, nên mình đã tìm đọc và tích hợp dữ liệu thực tế từ bài nghiên cứu khoa học uy tín về hiện tượng <strong>"TikTok Brain"</strong> và khả năng kiểm soát sự tập trung của học sinh Trung Quốc để thông tin có giá trị học thuật thực tế hơn.
                             </p>
-                            <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-[10px] text-center pt-2">
-                                <div class="bg-white p-2 rounded border border-cozyPeach-200">🧠 Giảm tập trung</div>
-                                <div class="bg-white p-2 rounded border border-cozyPeach-200">💾 Suy giảm trí nhớ</div>
-                                <div class="bg-white p-2 rounded border border-cozyPeach-200">⚡ Nghiện Dopamine</div>
-                                <div class="bg-white p-2 rounded border border-cozyPeach-200">📉 Mất tư duy sâu</div>
-                                <div class="bg-white p-2 rounded border border-cozyPeach-200">💤 Rối loạn giấc ngủ</div>
+                            <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-[10px] text-center pt-1.5 font-medium">
+                                <div class="bg-white p-2 rounded border border-cozyPeach-100">🧠 Giảm khả năng tập trung</div>
+                                <div class="bg-white p-2 rounded border border-cozyPeach-100">💾 Suy giảm ghi nhớ</div>
+                                <div class="bg-white p-2 rounded border border-cozyPeach-100">⚡ Nghiện dopamine</div>
+                                <div class="bg-white p-2 rounded border border-cozyPeach-100">📉 Hạn chế tư duy sâu</div>
+                                <div class="bg-white p-2 rounded border border-cozyPeach-100">💤 Rối loạn giấc ngủ</div>
                             </div>
                         </div>
 
                         <!-- Tool Comparison Table -->
-                        <div class="space-y-3">
-                            <h4 class="text-sm font-bold text-cozyPeach-600">Đánh giá ưu & nhược điểm của các công cụ phối hợp:</h4>
+                        <div class="space-y-2.5">
+                            <h4 class="text-xs font-bold text-cozyPeach-600">Sự kết hợp giữa 3 công cụ AI chính:</h4>
                             <div class="overflow-x-auto">
                                 <table class="w-full text-left text-xs border-collapse">
                                     <thead>
                                         <tr class="bg-cozyTeal-50 text-cozyTeal-700 border-b border-cozyTeal-100">
-                                            <th class="p-2 font-bold">Công cụ AI</th>
-                                            <th class="p-2 font-bold">Kết quả nhận được</th>
-                                            <th class="p-2 font-bold">Điểm mạnh nổi bật</th>
-                                            <th class="p-2 font-bold">Hạn chế cần cải thiện</th>
+                                            <th class="p-2 font-bold">Công cụ</th>
+                                            <th class="p-2 font-bold">Nhiệm vụ</th>
+                                            <th class="p-2 font-bold">Điểm cộng</th>
+                                            <th class="p-2 font-bold">Điểm trừ</th>
                                         </tr>
                                     </thead>
                                     <tbody class="divide-y divide-cozyTeal-50 text-cozyTeal-900/80">
                                         <tr>
                                             <td class="p-2 font-bold">ChatGPT</td>
-                                            <td class="p-2">Cấu trúc dàn ý chi tiết</td>
-                                            <td class="p-2">Tóm tắt thông tin cực kỳ nhanh</td>
-                                            <td class="p-2">Văn phong đôi khi chung chung, cần bổ sung thực tế</td>
+                                            <td class="p-2">Tóm tắt cấu trúc nội dung</td>
+                                            <td class="p-2">Tốc độ siêu nhanh, linh hoạt</td>
+                                            <td class="p-2">Lời văn đôi khi bị rập khuôn, cần con người sửa đổi</td>
                                         </tr>
                                         <tr>
                                             <td class="p-2 font-bold">DALL-E</td>
-                                            <td class="p-2">Hình ảnh não bộ thối rữa tối giản</td>
-                                            <td class="p-2">Hình ảnh nghệ thuật độc bản, ấn tượng</td>
-                                            <td class="p-2">Khó kiểm soát chính xác 100% chi tiết trong lần đầu</td>
+                                            <td class="p-2">Vẽ hình minh họa bộ não</td>
+                                            <td class="p-2">Hình ảnh sáng tạo, mang tính biểu tượng tốt</td>
+                                            <td class="p-2">Khó tinh chỉnh các chi tiết nhỏ theo đúng ý vẽ</td>
                                         </tr>
                                         <tr>
                                             <td class="p-2 font-bold">Canva AI</td>
-                                            <td class="p-2">Bố cục Infographic hài hòa màu sắc</td>
-                                            <td class="p-2">Đồng bộ phông chữ, biểu tượng chuyên nghiệp</td>
-                                            <td class="p-2">Phụ thuộc nhiều vào kho dữ liệu mẫu có sẵn</td>
+                                            <td class="p-2">Gợi ý mẫu khung và màu sắc</td>
+                                            <td class="p-2">Đồng bộ phông chữ và bố cục hài hòa</td>
+                                            <td class="p-2">Bị phụ thuộc vào kho dữ liệu mẫu của hệ thống</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -570,45 +558,44 @@
                     </div>
 
                     <!-- TAB 6 CONTENT -->
-                    <div id="tab-content-6" class="tab-pane hidden space-y-6">
-                        <div class="flex justify-between items-start border-b border-cozyPeach-100 pb-4">
+                    <div id="tab-content-6" class="tab-pane hidden space-y-5 text-sm">
+                        <div class="flex justify-between items-start border-b border-cozyPeach-100 pb-3">
                             <div>
-                                <h3 class="text-2xl font-bold text-cozyTeal-700">Nhiệm vụ 6: Sử dụng AI có trách nhiệm trong học thuật</h3>
-                                <p class="text-xs text-cozyTeal-900/50 mt-1">Mục tiêu: Đảm bảo liêm chính học thuật tuyệt đối khi ứng dụng công nghệ.</p>
+                                <h3 class="text-xl font-bold text-cozyTeal-700">Nhiệm vụ 6: Sử dụng AI có trách nhiệm và liêm chính</h3>
+                                <p class="text-xs text-cozyTeal-900/50 mt-1">Giữ vững đạo đức học tập trong kỷ nguyên AI hỗ trợ.</p>
                             </div>
-                            <span class="px-3 py-1 bg-cozyPeach-100 text-cozyPeach-600 text-xs rounded-full font-bold">Chuyên nghiệp</span>
                         </div>
-                        <p class="text-sm text-cozyTeal-900/80 leading-relaxed">
-                            Nghiên cứu sâu sắc cẩm nang học viên của ULIS về đạo văn và chính sách quét Turnitin của các đại học lớn. Tôi tự rèn luyện kỹ năng phân biệt rạch ròi giữa <strong class="text-cozyTeal-700">"Hỗ trợ hợp lý"</strong> (gợi mở tư duy, kiểm tra ngữ pháp) và <strong class="text-cozyTeal-700">"Gian lận học thuật"</strong> (copy nguyên mẫu code, nhờ AI viết toàn bộ kết luận).
+                        <p class="text-cozyTeal-900/80 leading-relaxed text-xs sm:text-sm">
+                            Tìm hiểu chính sách nghiêm ngặt về chống đạo văn tại ULIS và việc áp dụng Turnitin tại các trường đại học, mình nhận ra công nghệ không hề bị cấm đoán, mà điều nhà trường muốn rèn luyện là tính trung thực của sinh viên. Mình luôn tự nhắc nhở để giữ vững ranh giới giữa việc nhờ AI trợ giúp và việc gian lận học thuật.
                         </p>
                         
                         <!-- Test Mastery Box -->
-                        <div class="p-4 bg-amber-50 rounded-xl border border-amber-200">
-                            <h4 class="text-sm font-bold text-amber-800"><i class="fa-solid fa-shield-halved mr-1"></i> "Bài Test Làm Chủ" (Mastery Test):</h4>
-                            <p class="text-xs text-amber-900/80 mt-1 italic leading-relaxed">
-                                "Nếu giảng viên yêu cầu giải thích từng dòng mã nguồn, từng công thức hay lập luận trong báo cáo học thuật ngay tại chỗ, bạn có tự tin bảo vệ không? Nếu câu trả lời là 'Không', thì việc nhờ AI hỗ trợ đã vượt ngưỡng liêm chính học thuật và biến thành hành vi thiếu trung thực."
+                        <div class="p-3.5 bg-amber-50 rounded-xl border border-amber-100">
+                            <h4 class="text-xs font-bold text-amber-800"><i class="fa-solid fa-shield-halved mr-1"></i> "Bài Test Làm Chủ" (Mastery Test):</h4>
+                            <p class="text-[11px] text-amber-950 mt-1 italic leading-relaxed">
+                                "Nếu thầy cô giáo gọi mình lên giải thích đột xuất từng ý tưởng, từng lập luận hay thậm chí là cách chọn ví dụ trong bài nộp, mình có tự tin trả lời được trọn vẹn không? Nếu câu trả lời là 'Không', có nghĩa là mình đã quá lạm dụng AI và để máy móc làm thay tư duy của chính mình." [1]
                             </p>
                         </div>
 
                         <!-- 5 Principles Cheat Sheet -->
-                        <div class="space-y-3">
-                            <h4 class="text-sm font-bold text-cozyTeal-700">Sổ tay 5 Nguyên tắc vàng của tôi:</h4>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                        <div class="space-y-2.5">
+                            <h4 class="text-xs font-bold text-cozyTeal-700">5 Nguyên tắc vàng của riêng mình:</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
                                 <div class="p-3 bg-cozyTeal-50 rounded-lg border border-cozyTeal-100 flex gap-2">
                                     <span class="font-bold text-cozyTeal-600">1.</span>
-                                    <p><strong>Giải thích, không đọc thay:</strong> Chỉ nhờ AI bóc tách các văn bản khó hiểu, tuyệt đối không lười biếng để AI đọc thay.</p>
+                                    <p><strong>Giải thích, không làm thay:</strong> Chỉ dùng AI để làm rõ các khái niệm khó hiểu, không phó mặc việc đọc sách cho AI.</p>
                                 </div>
                                 <div class="p-3 bg-cozyTeal-50 rounded-lg border border-cozyTeal-100 flex gap-2">
                                     <span class="font-bold text-cozyTeal-600">2.</span>
-                                    <p><strong>Tự làm nháp trước:</strong> Luôn hoàn thành khung bài tự lập trước khi nạp dữ liệu nhờ AI đóng góp ý kiến nâng cấp.</p>
+                                    <p><strong>Luôn tự làm nháp trước:</strong> Mình luôn tự hoàn thành khung bài tự viết của bản thân rồi mới đưa AI nhờ chỉnh sửa, góp ý.</p>
                                 </div>
                                 <div class="p-3 bg-cozyTeal-50 rounded-lg border border-cozyTeal-100 flex gap-2">
                                     <span class="font-bold text-cozyTeal-600">3.</span>
-                                    <p><strong>Bảo vệ dữ liệu cá nhân:</strong> Không bao giờ tải lên chatbot AI các thông tin định danh hoặc dữ liệu mật của lớp.</p>
+                                    <p><strong>Bảo vệ thông tin bảo mật:</strong> Không dại dột nạp các thông tin cá nhân hay các tài liệu nội bộ của lớp học lên AI.</p>
                                 </div>
                                 <div class="p-3 bg-cozyTeal-50 rounded-lg border border-cozyTeal-100 flex gap-2">
                                     <span class="font-bold text-cozyTeal-600">4.</span>
-                                    <p><strong>Trích dẫn minh bạch:</strong> Ghi nhận rõ ràng nguồn gốc bài nghiên cứu và công cụ AI hỗ trợ trong danh mục học liệu.</p>
+                                    <p><strong>Trích dẫn minh bạch:</strong> Thầy cô và bạn bè luôn cần biết bài viết này của mình có sự đóng góp của mô hình AI nào.</p>
                                 </div>
                             </div>
                         </div>
@@ -622,131 +609,131 @@
     <!-- INTERACTIVE SECTION 3: CÔNG CỤ TƯƠNG TÁC AI (WIDGET ZONE) -->
     <section id="ai-tools" class="py-24 px-6 bg-cozyTeal-50/30 relative">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-cozyPeach-500 font-semibold tracking-wider text-xs uppercase"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Góc Tương Tác Kỹ Thuật Số</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-cozyTeal-700">Trải Nghiệm Công Cụ Thông Minh</h2>
-                <p class="text-cozyTeal-900/70">Trải nghiệm các mô hình học thuật được hiện thực hóa bằng mã JavaScript trực quan sinh động bên dưới.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-cozyPeach-500 font-semibold tracking-wider text-xs uppercase"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Góc Trải Nghiệm Nhỏ</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-cozyTeal-700">Thử Nghiệm Tính Năng Cùng Mình</h2>
+                <p class="text-sm text-cozyTeal-900/70">Mời bạn trải nghiệm hai công cụ JavaScript nhỏ mình tự viết để hiểu cách đánh giá nguồn học liệu và cấu trúc prompt nhé!</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 
                 <!-- WIDGET 1: CRAAP EVALUATOR -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl border border-cozyPeach-200/50 space-y-6">
+                <div class="bg-white p-7 rounded-2xl shadow-md border border-cozyPeach-200/40 space-y-5">
                     <div class="flex items-center gap-3">
-                        <span class="w-10 h-10 rounded-xl bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-lg"><i class="fa-solid fa-chart-bar"></i></span>
+                        <span class="w-9 h-9 rounded-xl bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-md"><i class="fa-solid fa-chart-bar"></i></span>
                         <div>
-                            <h3 class="text-lg font-bold text-cozyTeal-700">Máy tính điểm CRAAP học thuật</h3>
-                            <p class="text-xs text-cozyTeal-900/50">Tự kiểm tra độ uy tín của nguồn tài liệu trên thang điểm 50.</p>
+                            <h3 class="text-sm sm:text-base font-bold text-cozyTeal-700">Thử tính điểm tin cậy CRAAP</h3>
+                            <p class="text-[11px] text-cozyTeal-900/50">Kéo các thanh bên dưới để thử chấm điểm một nguồn tài liệu bất kỳ.</p>
                         </div>
                     </div>
 
-                    <div class="space-y-4 text-xs">
+                    <div class="space-y-3 text-xs">
                         <div class="space-y-1">
                             <div class="flex justify-between font-semibold">
-                                <label for="c-score">Currency (Tính cập nhật):</label>
+                                <label for="c-score">Currency (Cập nhật):</label>
                                 <span id="c-val" class="text-cozyPeach-600 font-bold">5</span>
                             </div>
-                            <input type="range" id="c-score" min="1" max="10" value="5" class="w-full accent-cozyPeach-500" oninput="calculateCraap()">
+                            <input type="range" id="c-score" min="1" max="10" value="5" class="w-full accent-cozyPeach-500 cursor-pointer" oninput="calculateCraap()">
                         </div>
                         <div class="space-y-1">
                             <div class="flex justify-between font-semibold">
-                                <label for="r-score">Relevance (Tính phù hợp):</label>
+                                <label for="r-score">Relevance (Phù hợp học tập):</label>
                                 <span id="r-val" class="text-cozyPeach-600 font-bold">5</span>
                             </div>
-                            <input type="range" id="r-score" min="1" max="10" value="5" class="w-full accent-cozyPeach-500" oninput="calculateCraap()">
+                            <input type="range" id="r-score" min="1" max="10" value="5" class="w-full accent-cozyPeach-500 cursor-pointer" oninput="calculateCraap()">
                         </div>
                         <div class="space-y-1">
                             <div class="flex justify-between font-semibold">
                                 <label for="a-score">Authority (Thẩm quyền tác giả):</label>
                                 <span id="a-val" class="text-cozyPeach-600 font-bold">5</span>
                             </div>
-                            <input type="range" id="a-score" min="1" max="10" value="5" class="w-full accent-cozyPeach-500" oninput="calculateCraap()">
+                            <input type="range" id="a-score" min="1" max="10" value="5" class="w-full accent-cozyPeach-500 cursor-pointer" oninput="calculateCraap()">
                         </div>
                         <div class="space-y-1">
                             <div class="flex justify-between font-semibold">
-                                <label for="ac-score">Accuracy (Tính chính xác):</label>
+                                <label for="ac-score">Accuracy (Mức độ chính xác):</label>
                                 <span id="ac-val" class="text-cozyPeach-600 font-bold">5</span>
                             </div>
-                            <input type="range" id="ac-score" min="1" max="10" value="5" class="w-full accent-cozyPeach-500" oninput="calculateCraap()">
+                            <input type="range" id="ac-score" min="1" max="10" value="5" class="w-full accent-cozyPeach-500 cursor-pointer" oninput="calculateCraap()">
                         </div>
                         <div class="space-y-1">
                             <div class="flex justify-between font-semibold">
-                                <label for="p-score">Purpose (Mục đích của nguồn):</label>
+                                <label for="p-score">Purpose (Mục đích xuất bản):</label>
                                 <span id="p-val" class="text-cozyPeach-600 font-bold">5</span>
                             </div>
-                            <input type="range" id="p-score" min="1" max="10" value="5" class="w-full accent-cozyPeach-500" oninput="calculateCraap()">
+                            <input type="range" id="p-score" min="1" max="10" value="5" class="w-full accent-cozyPeach-500 cursor-pointer" oninput="calculateCraap()">
                         </div>
                     </div>
 
                     <!-- CRAAP Output Result -->
-                    <div class="p-4 rounded-xl bg-cozyTeal-50 border border-cozyTeal-100 flex items-center justify-between">
+                    <div class="p-3 rounded-xl bg-cozyTeal-50 border border-cozyTeal-100 flex items-center justify-between">
                         <div>
-                            <p class="text-xs text-cozyTeal-900/60 uppercase font-bold tracking-wider">Tổng điểm CRAAP:</p>
-                            <h4 id="craap-result-score" class="text-3xl font-extrabold text-cozyTeal-700 mt-1">25/50</h4>
+                            <p class="text-[10px] text-cozyTeal-900/60 uppercase font-bold tracking-wider">Tổng điểm đạt được:</p>
+                            <h4 id="craap-result-score" class="text-2xl font-extrabold text-cozyTeal-700 mt-0.5">25/50</h4>
                         </div>
                         <div class="text-right">
-                            <p class="text-xs text-cozyTeal-900/60">Xếp hạng tin cậy:</p>
-                            <span id="craap-badge" class="inline-block mt-1 px-3 py-1 bg-amber-100 text-amber-700 text-xs rounded-full font-bold">Trung Bình Khá</span>
+                            <p class="text-[10px] text-cozyTeal-900/60">Đánh giá chung:</p>
+                            <span id="craap-badge" class="inline-block mt-0.5 px-2.5 py-0.5 bg-amber-100 text-amber-700 text-[10px] rounded-full font-bold">Trung Bình Khá</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- WIDGET 2: CLEAR PROMPT BUILDER -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl border border-cozyPeach-200/50 space-y-6 flex flex-col justify-between">
+                <div class="bg-white p-7 rounded-2xl shadow-md border border-cozyPeach-200/40 space-y-5 flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="flex items-center gap-3">
-                            <span class="w-10 h-10 rounded-xl bg-cozyPeach-100 text-cozyPeach-500 flex items-center justify-center text-lg"><i class="fa-solid fa-microchip"></i></span>
+                            <span class="w-9 h-9 rounded-xl bg-cozyPeach-100 text-cozyPeach-500 flex items-center justify-center text-lg"><i class="fa-solid fa-microchip"></i></span>
                             <div>
-                                <h3 class="text-lg font-bold text-cozyTeal-700">Trình tạo cấu trúc Prompt CLEAR</h3>
-                                <p class="text-xs text-cozyTeal-900/50">Tự ráp nối một câu lệnh chuyên nghiệp thay vì nhập tùy tiện.</p>
+                                <h3 class="text-sm sm:text-base font-bold text-cozyTeal-700">Trình ghép nối câu lệnh CLEAR</h3>
+                                <p class="text-[11px] text-cozyTeal-900/50">Thử lựa chọn các trường thông tin để xem cách cấu trúc prompt thay đổi nhé.</p>
                             </div>
                         </div>
 
-                        <div class="space-y-3 text-xs">
+                        <div class="space-y-3.5 text-xs">
                             <div class="grid grid-cols-2 gap-3">
                                 <div class="space-y-1">
                                     <label class="font-semibold block">Context (Bối cảnh):</label>
-                                    <select id="pb-context" class="w-full p-2 border border-cozyTeal-100 rounded-lg text-cozyTeal-900 focus:outline-none" onchange="buildPrompt()">
-                                        <option value="Tôi đang ôn tập chuẩn bị cho kỳ thi học phần Triết học Mác-Lênin">Thi Triết học</option>
-                                        <option value="Tôi đang nghiên cứu tài liệu về kỹ năng đọc hiểu chuyên sâu">Kỹ năng đọc hiểu</option>
-                                        <option value="Tôi đang chuẩn bị thuyết trình môn Cơ sở Văn hóa">Thuyết trình Văn hóa VN</option>
+                                    <select id="pb-context" class="w-full p-2 border border-cozyTeal-100 rounded-lg text-cozyTeal-900 focus:outline-none cursor-pointer" onchange="buildPrompt()">
+                                        <option value="Mình đang chuẩn bị ôn thi hết môn Triết học Mác - Lênin">Học Triết học</option>
+                                        <option value="Mình muốn hiểu sâu một tài liệu tiếng Anh chuyên ngành khá dài">Đọc hiểu Tiếng Anh</option>
+                                        <option value="Mình chuẩn bị làm đề cương thuyết trình về Cơ sở Văn hóa">Lập dàn ý Cơ sở Văn hóa VN</option>
                                     </select>
                                 </div>
                                 <div class="space-y-1">
-                                    <label class="font-semibold block">Role (Vai trò AI):</label>
-                                    <select id="pb-role" class="w-full p-2 border border-cozyTeal-100 rounded-lg text-cozyTeal-900 focus:outline-none" onchange="buildPrompt()">
-                                        <option value="Giảng viên lý luận cao cấp">Giảng viên Triết học</option>
-                                        <option value="Chuyên gia sư phạm ngôn ngữ">Chuyên gia Sư phạm</option>
-                                        <option value="Trưởng bộ môn Văn hóa học">Trưởng khoa Văn hóa</option>
+                                    <label class="font-semibold block">Role (Đóng vai):</label>
+                                    <select id="pb-role" class="w-full p-2 border border-cozyTeal-100 rounded-lg text-cozyTeal-900 focus:outline-none cursor-pointer" onchange="buildPrompt()">
+                                        <option value="Giảng viên đại học chuyên ngành">Giảng viên đại học</option>
+                                        <option value="Chuyên gia sư phạm ngôn ngữ">Chuyên gia ngôn ngữ</option>
+                                        <option value="Nhà nghiên cứu văn hóa truyền thống">Nhà văn hóa</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="space-y-1">
                                 <label class="font-semibold">Explicit Instruction (Mệnh lệnh cụ thể):</label>
-                                <select id="pb-instruction" class="w-full p-2 border border-cozyTeal-100 rounded-lg text-cozyTeal-900 focus:outline-none" onchange="buildPrompt()">
-                                    <option value="Hãy tóm tắt ngắn gọn các khái niệm, chỉ ra từ khóa cốt lõi và phương pháp luận">Tóm tắt và bóc tách từ khóa</option>
-                                    <option value="Hãy thiết kế 3 câu hỏi trắc nghiệm ở mức độ Vận dụng cao kèm giải thích đúng sai">Thiết kế trắc nghiệm vận dụng</option>
-                                    <option value="Hãy giải thích biện chứng 2 chiều kèm ví dụ thực tế đời sống">Giải thích kèm ví dụ thực tế</option>
+                                <select id="pb-instruction" class="w-full p-2 border border-cozyTeal-100 rounded-lg text-cozyTeal-900 focus:outline-none cursor-pointer" onchange="buildPrompt()">
+                                    <option value="Hãy tóm tắt ngắn gọn các khái niệm chính, chỉ ra từ khóa cốt lõi và bài học thực hành">Tóm tắt ngắn gọn và lấy bài học thực tế</option>
+                                    <option value="Hãy soạn giúp mình 3 câu hỏi trắc nghiệm tự ôn tập ở mức độ vận dụng cao kèm lời giải lý do chọn">Soạn 3 câu hỏi vận dụng kèm giải thích</option>
+                                    <option value="Hãy giải thích quan hệ biện chứng 2 chiều kèm một ví dụ thực tế học tập">Giải thích kèm ví dụ học đường</option>
                                 </select>
                             </div>
                             <div class="space-y-1">
-                                <label class="font-semibold">Format Requirement (Định dạng đầu ra):</label>
-                                <select id="pb-format" class="w-full p-2 border border-cozyTeal-100 rounded-lg text-cozyTeal-900 focus:outline-none" onchange="buildPrompt()">
-                                    <option value="Trình bày bằng bảng biểu cấu trúc rõ ràng, in đậm từ khóa quan trọng">Bảng biểu & In đậm từ khóa</option>
-                                    <option value="Xuất dưới dạng danh sách gạch đầu dòng Markdown thu gọn">Cấu trúc Markdown rút gọn</option>
+                                <label class="font-semibold">Format Requirement (Yêu cầu định dạng):</label>
+                                <select id="pb-format" class="w-full p-2 border border-cozyTeal-100 rounded-lg text-cozyTeal-900 focus:outline-none cursor-pointer" onchange="buildPrompt()">
+                                    <option value="Trình bày theo dạng bảng biểu trực quan, in đậm từ khóa quan trọng để dễ ghi nhớ thị giác">Dạng bảng biểu & In đậm từ khóa</option>
+                                    <option value="Xuất kết quả thành các gạch đầu dòng Markdown thu gọn, ngắn gọn">Dạng Markdown rút gọn</option>
                                 </select>
                             </div>
                         </div>
                     </div>
 
                     <!-- Output Prompt generated -->
-                    <div class="space-y-2 mt-4">
-                        <label class="text-xs font-bold text-cozyTeal-900/60 block">Prompt CLEAR đã thiết lập tự động:</label>
-                        <div id="prompt-output" class="p-3 bg-cozyPeach-100/30 border border-cozyPeach-200 text-cozyTeal-900 font-mono text-[11px] rounded-lg min-h-[80px] break-words">
+                    <div class="space-y-2 mt-2">
+                        <label class="text-[10px] font-bold text-cozyTeal-900/60 block">Prompt CLEAR mẫu tự động ghép lại:</label>
+                        <div id="prompt-output" class="p-3 bg-cozyPeach-100/30 border border-cozyPeach-200 text-cozyTeal-900 font-mono text-[10px] rounded-lg min-h-[75px] break-words leading-relaxed">
                             Loading...
                         </div>
-                        <button onclick="copyPromptText()" class="w-full py-2 bg-cozyTeal-600 hover:bg-cozyTeal-700 text-white rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-md">
-                            <i class="fa-solid fa-copy"></i> Sao chép Prompt sang ChatGPT
+                        <button onclick="copyPromptText()" class="w-full py-2 bg-cozyTeal-600 hover:bg-cozyTeal-700 text-white rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1 shadow-md">
+                            <i class="fa-solid fa-copy"></i> Sao chép Prompt để thử nhé
                         </button>
                     </div>
                 </div>
@@ -758,77 +745,77 @@
     <!-- SECTION 4: TỔNG KẾT BẢN THÂN (REFLECTION) -->
     <section id="reflection" class="py-24 px-6 relative overflow-hidden bg-white">
         <!-- Decoration plane behind reflection -->
-        <div class="absolute -right-20 top-1/3 text-cozyPeach-100/40 text-[180px] -z-10 rotate-12"><i class="fa-solid fa-paper-plane"></i></div>
+        <div class="absolute -right-20 top-1/3 text-cozyPeach-100/30 text-[180px] -z-10 rotate-12"><i class="fa-solid fa-paper-plane"></i></div>
         
         <div class="max-w-4xl mx-auto space-y-12">
-            <div class="text-center space-y-4">
+            <div class="text-center space-y-3">
                 <span class="text-cozyPeach-500 font-semibold tracking-wider text-xs uppercase"><i class="fa-solid fa-heart mr-1"></i> Trang Tổng Kết</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-cozyTeal-700">Chiêm nghiệm & Phát triển bản thân</h2>
-                <p class="text-cozyTeal-900/70 max-w-xl mx-auto">Nhìn lại hành trình tự rèn luyện suốt một học kỳ qua dự án Portfolio kỹ thuật số cá nhân.</p>
+                <h2 class="text-2xl sm:text-3xl font-bold text-cozyTeal-700">Chiêm nghiệm & Nhìn lại chặng đường</h2>
+                <p class="text-sm text-cozyTeal-900/70 max-w-lg mx-auto">Cảm nhận và những thay đổi trong suy nghĩ của mình sau khi thực hiện dự án này.</p>
             </div>
 
-            <div class="space-y-8 text-sm sm:text-base leading-relaxed text-cozyTeal-900/80">
+            <div class="space-y-7 text-xs sm:text-sm leading-relaxed text-cozyTeal-900/80">
                 <div class="flex gap-4 items-start">
-                    <span class="w-10 h-10 rounded-full bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-person-circle-check"></i></span>
-                    <div class="space-y-2">
-                        <h3 class="text-lg font-bold text-cozyTeal-700">Trải nghiệm & Bài học rút ra</h3>
+                    <span class="w-9 h-9 rounded-full bg-cozyTeal-100 text-cozyTeal-600 flex items-center justify-center text-md shrink-0"><i class="fa-solid fa-person-circle-check"></i></span>
+                    <div class="space-y-1">
+                        <h3 class="text-sm sm:text-base font-bold text-cozyTeal-700">Sự thay đổi của bản thân mình</h3>
                         <p>
-                            Quá trình xây dựng Portfolio này đã giúp tôi hệ thống hóa một khối lượng kiến thức khổng lồ một cách khoa học. Điểm cốt lõi không chỉ nằm ở việc hoàn tất các bài tập, mà là cơ hội thực sự để tự soi chiếu năng lực cá nhân trong cách tổ chức, phân tích dữ liệu và tư duy logic.
+                            Khi bắt tay vào lập trang Portfolio này, mình thực sự cảm thấy việc sắp xếp tài liệu, suy nghĩ xem nên viết prompt như thế nào cho khéo là những thử thách thực hành vô cùng thú vị [1]. Chúng dạy mình biết cách sắp xếp mọi việc tuần tự, hệ thống và chỉn chu hơn trong học tập lẫn thói quen hàng ngày.
                         </p>
                     </div>
                 </div>
 
                 <div class="flex gap-4 items-start">
-                    <span class="w-10 h-10 rounded-full bg-cozyPeach-100 text-cozyPeach-500 flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-brain"></i></span>
-                    <div class="space-y-2">
-                        <h3 class="text-lg font-bold text-cozyTeal-700">Sự chuyển biến trong tư duy AI</h3>
+                    <span class="w-9 h-9 rounded-full bg-cozyPeach-100 text-cozyPeach-500 flex items-center justify-center text-md shrink-0"><i class="fa-solid fa-brain"></i></span>
+                    <div class="space-y-1">
+                        <h3 class="text-sm sm:text-base font-bold text-cozyTeal-700">Nhìn nhận mới về vai trò của công nghệ và AI</h3>
                         <p>
-                            Bài học sâu sắc nhất chính là việc thay đổi hoàn toàn cách tiếp cận AI từ <strong>"Làm từ đầu"</strong> sang <strong>"Phân tích, Giám sát và Chỉnh sửa"</strong>. Thay vì thụ động nhận lấy câu trả lời mờ nhạt từ máy móc, tôi hiểu rằng tư duy làm chủ của con người mới là yếu tố quyết định chất lượng đầu ra học thuật.
+                            Môn học này đã thay đổi hẳn định kiến trước đây của mình về trí tuệ nhân tạo. AI không phải sinh ra để chúng mình lười biếng phó mặc bài vở [1]. Ngược lại, nó giống như một người trợ lý đắc lực giúp mở rộng luồng tư duy, nhưng chất lượng cuối cùng luôn phụ thuộc vào việc mình kiểm soát, hiệu đính và chịu trách nhiệm đến đâu [1].
                         </p>
                     </div>
                 </div>
 
                 <div class="flex gap-4 items-start">
-                    <span class="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-mountain-sun"></i></span>
-                    <div class="space-y-2">
-                        <h3 class="text-lg font-bold text-cozyTeal-700">Thách thức đã vượt qua</h3>
+                    <span class="w-9 h-9 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-md shrink-0"><i class="fa-solid fa-mountain-sun"></i></span>
+                    <div class="space-y-1">
+                        <h3 class="text-sm sm:text-base font-bold text-cozyTeal-700">Thành quả ý nghĩa nhất với mình</h3>
                         <p>
-                            Quá trình phối hợp nhóm trực tuyến và những bất cập về lỗi hỏng hóc thiết bị lưu trữ đột ngột đã rèn luyện cho tôi tính thích nghi, kỷ luật đồng đội cao. Tôi đã kiên trì hướng dẫn các bạn đồng hành thực hành Trello, thiết lập chế độ bảo vệ tệp tin và tìm kiếm giải pháp cứu hộ cloud một cách tối ưu.
+                            Trang web Portfolio hoàn chỉnh và ngăn nắp này là thành quả khiến mình tự hào nhất sau chặng đường tự làm bài và rèn luyện [1]. Đây không chỉ đơn thuần là việc nộp bài cho xong, mà là sự chứng minh nghiêm túc rằng mình đã từng bước cải thiện kỹ năng số, tự tin để thích ứng với môi trường làm việc năng động sau này.
                         </p>
                     </div>
                 </div>
             </div>
 
             <!-- Student quote banner card style matching Hình 1.jpg background style -->
-            <div class="p-8 rounded-2xl bg-cozyTeal-600 text-white glowing-shadow text-center space-y-4">
-                <i class="fa-solid fa-quote-left text-3xl opacity-30"></i>
-                <p class="text-base sm:text-lg italic font-medium leading-relaxed">
-                    "Công nghệ số và trí tuệ nhân tạo không sinh ra để thay thế trách nhiệm suy nghĩ của con người. Chúng là bệ phóng thúc đẩy năng lượng sáng tạo, chỉ khi ta biết giữ vững ranh giới liêm chính của tri thức học thuật."
+            <div class="p-6 sm:p-8 rounded-2xl bg-cozyTeal-600 text-white glowing-shadow text-center space-y-4">
+                <i class="fa-solid fa-quote-left text-2xl opacity-30"></i>
+                <p class="text-sm sm:text-base italic font-medium leading-relaxed">
+                    "AI không thể nào đọc và suy nghĩ thay chúng ta. Công nghệ chỉ thực sự đem lại giá trị khi chúng mình biết cách làm chủ nó bằng một sự tò mò chân thành, tinh thần ham học hỏi và một cam kết liêm chính học tập trọn vẹn." [1]
                 </p>
                 <div class="pt-2 border-t border-white/20">
-                    <p class="font-bold">- Đoàn Thị Phương Thảo -</p>
-                    <p class="text-xs opacity-75">ULIS Student & Language Educator Enthusiast</p>
+                    <p class="font-bold text-sm">Đoàn Thị Phương Thảo</p>
+                    <p class="text-[10px] opacity-75">Khoa Sư phạm Tiếng Anh - ULIS</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-cozyTeal-900 text-cozyCream/70 py-12 px-6 border-t border-cozyPeach-200/20">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="space-y-2 text-center md:text-left">
-                <h4 class="brand-font text-white font-bold text-lg">Đoàn Thị Phương Thảo</h4>
-                <p class="text-xs">Mã số sinh viên: 25040188 | Ngành học: Ngôn ngữ & Văn hóa Anh</p>
-                <p class="text-[11px] opacity-60">Dự án Portfolio Digital cá nhân - Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo</p>
+    <footer class="bg-cozyTeal-900 text-cozyCream/70 py-10 px-6 border-t border-cozyPeach-200/20 text-xs">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-5">
+            <div class="space-y-1.5 text-center md:text-left">
+                <h4 class="brand-font text-white font-bold text-base">Đoàn Thị Phương Thảo</h4>
+                <p class="text-[11px] opacity-80">Mã số sinh viên: 25040188 | Ngành: Ngôn ngữ & Văn hóa Anh</p>
+                <p class="text-[10px] opacity-60">Dự án Portfolio cá nhân - Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo [1]</p>
             </div>
             
             <div class="flex gap-4">
-                <a href="https://drive.google.com/drive/folders/1ZIYHnp0cfUC8EgM_vMg93-nftUP3fxfU?usp=drive_link" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-cozyPeach-500 hover:text-white flex items-center justify-center transition-all duration-300"><i class="fa-brands fa-google-drive"></i></a>
-                <a href="https://www.ulis.vnu.edu.vn" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-cozyPeach-500 hover:text-white flex items-center justify-center transition-all duration-300"><i class="fa-solid fa-graduation-cap"></i></a>
+                <a href="https://drive.google.com/drive/folders/1ZIYHnp0cfUC8EgM_vMg93-nftUP3fxfU?usp=drive_link" target="_blank" class="w-8 h-8 rounded-full bg-white/10 hover:bg-cozyPeach-500 hover:text-white flex items-center justify-center transition-all duration-300 text-sm"><i class="fa-brands fa-google-drive"></i></a>
+                <a href="https://www.ulis.vnu.edu.vn" target="_blank" class="w-8 h-8 rounded-full bg-white/10 hover:bg-cozyPeach-500 hover:text-white flex items-center justify-center transition-all duration-300 text-sm"><i class="fa-solid fa-graduation-cap"></i></a>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto text-center mt-8 pt-8 border-t border-white/5 text-[11px] opacity-40">
-            &copy; 2026 Đoàn Thị Phương Thảo. Thiết kế phong cách mộng mơ ấm áp đồng hành cùng ULIS.
+        <div class="max-w-7xl mx-auto text-center mt-6 pt-6 border-t border-white/5 text-[10px] opacity-40">
+            &copy; 2026 Đoàn Thị Phương Thảo. Thiết kế mộng mơ ấm áp đồng hành cùng sinh viên ULIS.
         </div>
     </footer>
 
@@ -887,16 +874,16 @@
             const badge = document.getElementById('craap-badge');
             if (total >= 40) {
                 badge.innerText = "Tuyệt Vời (Rất Đáng Tin)";
-                badge.className = "inline-block mt-1 px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full font-bold";
+                badge.className = "inline-block mt-0.5 px-2.5 py-0.5 bg-green-100 text-green-700 text-[10px] rounded-full font-bold";
             } else if (total >= 30) {
                 badge.innerText = "Tốt (Độ Tin Cậy Cao)";
-                badge.className = "inline-block mt-1 px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-bold";
+                badge.className = "inline-block mt-0.5 px-2.5 py-0.5 bg-blue-100 text-blue-700 text-[10px] rounded-full font-bold";
             } else if (total >= 20) {
                 badge.innerText = "Trung Bình Khá";
-                badge.className = "inline-block mt-1 px-3 py-1 bg-amber-100 text-amber-700 text-xs rounded-full font-bold";
+                badge.className = "inline-block mt-0.5 px-2.5 py-0.5 bg-amber-100 text-amber-700 text-[10px] rounded-full font-bold";
             } else {
                 badge.innerText = "Yếu (Không Nên Dùng)";
-                badge.className = "inline-block mt-1 px-3 py-1 bg-red-100 text-red-700 text-xs rounded-full font-bold";
+                badge.className = "inline-block mt-0.5 px-2.5 py-0.5 bg-red-100 text-red-700 text-[10px] rounded-full font-bold";
             }
         }
         calculateCraap(); // initial call
@@ -908,7 +895,7 @@
             const instruction = document.getElementById('pb-instruction').value;
             const format = document.getElementById('pb-format').value;
 
-            const finalPrompt = `[Bối cảnh]: ${context}. \n[Vai trò]: Đóng vai là một ${role} giàu kinh nghiệm. \n[Mệnh lệnh cụ thể]: ${instruction}. \n[Định dạng]: ${format}. Hãy suy nghĩ từng bước một (think step-by-step) để phản hồi chi tiết nhất.`;
+            const finalPrompt = `[Bối cảnh]: ${context}. \n[Vai trò]: Nhờ AI đóng vai là một ${role} giàu kinh nghiệm. \n[Mệnh lệnh cụ thể]: ${instruction}. \n[Định dạng]: ${format}. Hãy phân tích kỹ để có kết quả phản hồi tốt nhé.`;
             document.getElementById('prompt-output').innerText = finalPrompt;
         }
         buildPrompt(); // initial call
@@ -916,7 +903,7 @@
         function copyPromptText() {
             const textToCopy = document.getElementById('prompt-output').innerText;
             navigator.clipboard.writeText(textToCopy).then(() => {
-                alert("Đã sao chép prompt cấu trúc CLEAR thành công vào bộ nhớ tạm!");
+                alert("Đã copy câu lệnh CLEAR mẫu của mình rồi nhé!");
             });
         }
 
@@ -938,10 +925,10 @@
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
                 this.size = Math.random() * 4 + 1;
-                this.speedX = Math.random() * 0.4 - 0.2;
-                this.speedY = Math.random() * 0.4 - 0.2;
+                this.speedX = Math.random() * 0.3 - 0.15;
+                this.speedY = Math.random() * 0.3 - 0.15;
                 // Soft warm colors matching background
-                this.color = Math.random() > 0.5 ? 'rgba(226, 149, 135, 0.15)' : 'rgba(67, 126, 120, 0.12)';
+                this.color = Math.random() > 0.5 ? 'rgba(226, 149, 135, 0.12)' : 'rgba(67, 126, 120, 0.1)';
             }
             update() {
                 this.x += this.speedX;
@@ -960,7 +947,7 @@
 
         function initParticles() {
             particles = [];
-            const particleCount = Math.floor((canvas.width * canvas.height) / 12000);
+            const particleCount = Math.floor((canvas.width * canvas.height) / 14000);
             for (let i = 0; i < particleCount; i++) {
                 particles.push(new Particle());
             }
